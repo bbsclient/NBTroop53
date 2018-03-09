@@ -9,7 +9,7 @@ div.gallery {
     border: 1px solid #ccc;
     float: left;
     width: 180px;
-    height: 180px;
+    height: 240px;
 }
 
 div.gallery:hover {
@@ -18,7 +18,7 @@ div.gallery:hover {
 
 div.gallery img {
     width: 100%;
-    height:  100%;
+    height:  60%;
 }
 
 div.desc {
@@ -38,11 +38,15 @@ div.desc {
 
 .resource-list {  
     margin: auto;
-    width: 60%;
+    width: 100%;
     padding: 10px;
  }
  .person-list { 
     margin: auto;
-    width: 60%;
+    width: 100%;
     padding: 10px;
   }
+
+.clearLeft {
+   clear: left; 
+}
