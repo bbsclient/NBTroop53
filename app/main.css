@@ -2,6 +2,8 @@ body {
     background-color: #f1e3b6;
 }
 
+
+
 div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
@@ -23,3 +25,24 @@ div.desc {
     padding: 15px;
     text-align: center;
 }
+
+  
+  H2, H3, H1, H4, FOOTER { text-align: center }
+
+  .mdl-list__item-avatar.material-icons {
+    background-color: #f1e3b6;
+    color: inherit;
+    border-radius: 0;
+    height: 100%;
+  }
+
+.resource-list {  
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+ }
+ .person-list { 
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+  }

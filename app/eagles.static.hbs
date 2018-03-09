@@ -4,6 +4,7 @@ _options:
   layout: app/layouts/main.static.hbs
   partials: 
    - app/partials/eagle.static.hbs
+footer: "Updated: 4/13/17"
 eagles: 
  - { year: 1973, bor: '12/18/73', name: 'John Hurlbut' }
  - { year: 1976, bor: '05/26/76', name: 'Bob Baudhuin' }
@@ -63,21 +64,9 @@ eagles:
 updated: '4-14-17'
 ---
 
-<h3>{{title}}</h3>
-
-
-<!-- Two Line List with secondary info and action -->
-<style>
-.demo-list-two {
-	width: 400px;
-}
-</style>
-
-<ul class="demo-list-two mdl-list">
+<ul class="person-list mdl-list">
 	{{#each eagles}}
 		{{>eagle.static.hbs}}
 	{{/each}}
 </ul>
-
-Updated: {{updated}}		
 

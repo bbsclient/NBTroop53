@@ -2,12 +2,15 @@
 title: Contact Troop 53
 _options:
   layout: app/layouts/main.static.hbs
+  partials: 
+   - app/partials/resource.static.hbs  
+email:
+- { title: 'Send e-mail to Scoutmaster', type: mail_outline, url: "mailto:Troop53@pacunits.org"}
+- { title: 'Send e-mail to Webmaster', type: mail_outline, url: "mailto:Troop53@wi.rr.com"}
 ---
 
-<h3>{{title}}</h3>
-<br>
-<br>
-<a name="e-mail"></a>Send e-mail to <i><a href="mailto:Troop53@pacunits.org">Scoutmaster</a></i>
-<br>
-Send e-mail to <i><a href="mailto:Troop53@wi.rr.com">Webmaster</a></i>
-<br>
+<ul class="resource-list mdl-list">
+{{#each email}}
+  {{>resource.static.hbs}}
+{{/each}}
+</ul>

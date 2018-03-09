@@ -5,7 +5,7 @@ _options:
   partials: 
    - app/partials/leader.static.hbs
    - app/partials/scoutmaster.static.hbs
-updated: '3-6-18'
+footer: "Updated: 4/13/17"
 leaders:
  - { name: 'Maureen Wise', position: 'Institutional Head' }
  - { name: 'Tracey Pomeroy', position: 'Chartered Organization Representative' }
@@ -45,18 +45,10 @@ scoutmasters:
  - { name: 'Bill Ryan', position: 'Assistant Scoutmaster' }
    
 ---
-<h3>{{title}}</h3>
 
 <h4>Troop Committee Members</h4>
 
-<!-- Two Line List with secondary info and action -->
-<style>
-.demo-list-two {
-	width: 400px;
-}
-</style>
-
-<ul class="demo-list-two mdl-list">
+<ul class="person-list mdl-list">
   {{#each leaders}}
     {{>leader.static.hbs}}
   {{/each}}
@@ -64,10 +56,9 @@ scoutmasters:
 
 <h4>Troop Scoutmasters</h4>
 
-<ul class="demo-list-two mdl-list">
+<ul class="person-list mdl-list">
   {{#each scoutmasters}}
     {{>scoutmaster.static.hbs}}
   {{/each}}
 </ul>
-
-Updated: {{updated}}		
+		
