@@ -1,0 +1,27 @@
+---
+title: Resources
+_options:
+  layout: app/layouts/main.static.hbs
+  partials: 
+   - app/partials/resource.static.hbs  
+resources:
+ - { title: 'BSA Medical Form', url: "downloads/680-001_ABC-1.pdf"}
+ - { title: 'Activity Consent Form', url: "downloads/activity-consent-form.pdf"}
+ - { title: 'Troop 53 Bylaws', url: "downloads/troop53bylaws.pdf"}
+ - { title: 'Troop 53 Communication Plan', url: "downloads/troop53comms_plan.pdf"}
+ - { title: 'Boy Scout Youth Application', url: "downloads/524-406.pdf"}
+ - { title: 'Boy Scout Adult Application', url: "downloads/524-501.pdf"}
+ - { title: 'Pottawatomi Area Council, BSA', url: "http://www.pacbsa.org/"}
+ - { title: 'Scout Book', url: "https://www.scoutbook.com/"}
+ - { title: 'Camp Long Lake', url: "http://www.pacbsa.org/2655"}
+ - { title: 'Unit Service Area Information - South East USA ', url: "http://www.pacbsa.org/about-us/unit-service-areas/unit-service-area-2-southeast/64851"}
+ - { title: 'Order of the Arrow - Wag-O-Shag Lodge #280', url: "http://wagoshag.com/"}
+ - { title: 'Troop 53 Facebook Group', url: "https://www.facebook.com/groups/1468325346749338/"}
+---
+
+<h3>{{title}}</h3>
+ <br/>
+
+{{#each resources}}
+  {{>resource.static.hbs}}
+{{/each}}

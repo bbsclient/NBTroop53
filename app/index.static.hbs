@@ -1,0 +1,41 @@
+---
+title: Welcome to BSA Troop 53!
+_options:
+  layout: app/layouts/main.static.hbs
+---
+<h3>
+{{title}}
+</h3>
+
+<h4>New Berlin, Wisconsin</h4>
+<p>Troop 53 is part of Potawatomi Area Council's South East Unit Service Area serving the youth in the school districts of New Berlin, Muskego, and West Allis.</p>
+
+<h4>Upcoming Events</h4>
+<ul id="events-upcoming"></ul>
+
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendar.html">
+	View Calendar
+</a>
+	
+    <script src="dist/format-google-calendar.min.js"></script>
+    <script>
+ 	formatGoogleCalendar.init({
+	calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/sahdeafo8sgihvvjjkh9qg6ut0@group.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY',
+	past: false,
+	upcoming: true,
+	sameDayTimes: true,
+	dayNames: true,
+	pastTopN: 2,
+	upcomingTopN: 10,
+	itemsTagName: 'li',
+	upcomingSelector: '#events-upcoming',
+	pastSelector: '#events-past',
+	recurringEvents: true, 
+	upcomingHeading: '',
+	pastHeading: '',
+	format: ['*date*', ': ', '*summary*', ' — ', ' in ', '*location*'],
+	timeMin: '2017-06-03T10:00:00-07:00',
+	timeMax: '2020-06-03T10:00:00-07:00'
+	});
+</script>
+

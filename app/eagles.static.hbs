@@ -1,0 +1,83 @@
+---
+title: Eagle Honor Roll
+_options:
+  layout: app/layouts/main.static.hbs
+  partials: 
+   - app/partials/eagle.static.hbs
+eagles: 
+ - { year: 1973, bor: '12/18/73', name: 'John Hurlbut' }
+ - { year: 1976, bor: '05/26/76', name: 'Bob Baudhuin' }
+ - { year: 1979, bor: '03/06/79', name: 'Jim Baudhuin' }  
+ - { year: 1979, bor: '05/01/79', name: 'John Eng' } 
+ - { year: 1979, bor: '12/19/79', name: 'Jeff Eng' } 
+ - { year: 1979, bor: '12/19/79', name: 'Mike Zingale' }
+ - { year: 1984, bor: '02/15/84', name: 'Chris Hintz' }
+ - { year: 1986, bor: '04/03/86', name: 'Eric Shusta' }
+ - { year: 1986, bor: '09/25/86', name: 'Greg Kort' }
+ - { year: 1986, bor: '09/25/86', name: 'Elbert Huang' }
+ - { year: 1987, bor: '10/22/87', name: 'Fred Huang' }
+ - { year: 1990, bor: '03/06/90', name: 'Andy Ferr' }
+ - { year: 1990, bor: '10/16/90', name: 'A. Joseph Stockhausen' }
+ - { year: 1990, bor: '08/21/90', name: 'Pat Knapp' }
+ - { year: 1994, bor: '01/20/94', name: 'Peter Vehmas' }
+ - { year: 1994, bor: '08/31/94', name: 'Dave Donars' }
+ - { year: 1994, bor: '11/17/94', name: 'Scott Brown' }
+ - { year: 1995, bor: '02/16/95', name: 'Nolan Knapp' }
+ - { year: 1996, bor: '09/05/96', name: 'Jason Leja' }
+ - { year: 1997, bor: '01/16/97', name: 'John Stockhausen' }
+ - { year: 1997, bor: '02/24/97', name: 'Chris Dietrich' }
+ - { year: 1998, bor: '02/21/98', name: 'Jeff Brown' }
+ - { year: 1999, bor: '10/16/99', name: 'Darren Rose' }
+ - { year: 2000, bor: '02/19/00', name: 'Kevin Skogg' }
+ - { year: 2000, bor: '06/17/00', name: 'Peter Amerpohl' }
+ - { year: 2000, bor: '06/26/00', name: 'Mitch Lataille' }
+ - { year: 2000, bor: '11/18/00', name: 'William Ryan' }
+ - { year: 2001, bor: '08/18/01', name: 'James Jeske' }
+ - { year: 2002, bor: '06/20/02', name: 'Sean Ryan' }
+ - { year: 2002, bor: '09/28/02', name: 'Tom Barbieri' }
+ - { year: 2002, bor: '12/21/02', name: 'Aaron Swaner' }
+ - { year: 2003, bor: '02/22/03', name: 'Brent Bates' }
+ - { year: 2005, bor: '02/05/05', name: 'Jon Schwab' }
+ - { year: 2005, bor: '02/05/05', name: 'Zak Lutz' }
+ - { year: 2005, bor: '11/19/05', name: 'Nik Nelson' }
+ - { year: 2007, bor: '11/17/07', name: 'Chris Gonzalez' }
+ - { year: 2008, bor: '04/19/08', name: 'Bryan Rezeski ' }
+ - { year: 2008, bor: '12/20/08', name: 'Jeff Beier' }
+ - { year: 2009, bor: '10/17/09', name: 'Nicholas Goldner' }
+ - { year: 2010, bor: '03/20/10', name: 'Evan Rypel' }
+ - { year: 2011, bor: '01/27/11', name: 'Nicholas Gonzalez' }
+ - { year: 2011, bor: '01/27/11', name: 'Garett Egeland' }
+ - { year: 2011, bor: '01/27/11', name: 'Rex Key' }
+ - { year: 2011, bor: '06/04/11', name: 'Tim Dornacker' }
+ - { year: 2011, bor: '06/04/11', name: 'Kevin Schmidt' }
+ - { year: 2012, bor: '04/28/12', name: 'Jamie Rypel' }
+ - { year: 2012, bor: '04/28/12', name: 'Alex Schwab' }
+ - { year: 2013, bor: '05/11/13', name: 'Tom Wade' }
+ - { year: 2014, bor: '08/25/14', name: 'Tyler Egeland' }
+ - { year: 2014, bor: '12/13/14', name: 'Viktor Milosavljevic' }
+ - { year: 2016, bor: '01/16/16', name: 'Josh Fisher' }
+ - { year: 2016, bor: '11/27/16', name: 'Aaron Schmidt' }
+ - { year: 2017, bor: '02/25/17', name: 'Josh Kohel' }
+ - { year: 2017, bor: '03/26/17', name: 'Ben Goldner' }
+ - { year: 2017, bor: '03/30/17', name: 'Jimmy Pomeroy' }
+updated: '4-14-17'
+---
+
+<h3>{{title}}</h3>
+
+
+<!-- Two Line List with secondary info and action -->
+<style>
+.demo-list-two {
+	width: 400px;
+}
+</style>
+
+<ul class="demo-list-two mdl-list">
+	{{#each eagles}}
+		{{>eagle.static.hbs}}
+	{{/each}}
+</ul>
+
+Updated: {{updated}}		
+
