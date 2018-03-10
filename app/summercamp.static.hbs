@@ -1,0 +1,18 @@
+---
+title: Summer Camp
+_options:
+  layout: app/layouts/main.static.hbs
+  partials: 
+   - app/partials/photos.static.hbs  
+photos:
+ - { image: 'images/sff.png', desc: 'Scouting Food Drive' }
+---
+<p>We are a very active troop, going on an outing every month and to summer camp at Long Lake in July.  
+  We had been meeting at Lost Arrow Campsite since the 1970's.  In 2014 we switched to Trail View.  
+  </p>
+
+{{#each photos}}
+		{{>photos.static.hbs}}
+{{/each}}
+
+<div class="clearLeft"></div>

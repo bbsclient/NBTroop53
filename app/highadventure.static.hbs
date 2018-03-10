@@ -1,0 +1,26 @@
+---
+title: High Adventure
+_options:
+  layout: app/layouts/main.static.hbs
+  partials: 
+   - app/partials/photos.static.hbs  
+photos:
+ - { image: 'images/sff.png', desc: 'Scouting Food Drive' }
+---
+
+<p>In 2003 our high adventure group became certified as Open Water Scuba Divers, 
+  and now as Venture Crew 53 members, have performed more dives. 
+  
+  In the summer of 2005, we sent our first crew to the Scuba Adventure at Sea Base, 
+  and attended again in the summers of 2007, 2009 and 2011.  
+  In the summer 2008, we had 2 crews canoeing the Boundary Waters Canoe Area Wilderness in Minnesota.  
+  The summer of 2012, we conducted a High Adventure Trip to Colorado, 
+  including a stop at Yellowstone Park.  In June of 2013 we spent 10 days hiking the trails at Philmont Scout Ranch 
+  in New Mexico for the first time since 1996.  
+  The summer of 2014, we again attended Sea Base, and in 2015 had 2 crews canoeing the Boundary Waters.</p>
+
+{{#each photos}}
+		{{>photos.static.hbs}}
+{{/each}}
+
+<div class="clearLeft"></div>

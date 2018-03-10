@@ -4,14 +4,11 @@ _options:
   layout: app/layouts/main.static.hbs
   partials: 
    - app/partials/gallery.static.hbs  
-outreach:
- - { image: 'images/sff.png', url: 'fooddrive.html', desc: 'Scouting Food Drive' }
- - { image: 'images/charter_org.png', url: 'charter.html', desc: 'Giving back to the charter organization' }
- - { image: 'images/troop_53_neck-min.jpg', url: 'outreach.html', desc: 'Other volunteering activities' }
 
-camping:
- - { image: 'images/summer_camp.jpg', url: 'summercamp.html', desc: 'Summer Camp' }
- - { image: 'images/troop_53_sign-min.jpg', url: 'camping.html', desc: 'Local Outings' }
+details:
+ - { image: 'images/troop_53_neck-min.jpg', url: 'communityservice.html', desc: 'Volunteering in the Community' }
+ - { image: 'images/troop_53_sign-min.jpg', url: 'outings.html', desc: 'Troop Outings and Events' }
+ - { image: 'images/summer_camp.jpg', url: 'summercamp.html', desc: 'Summer Camp at Long Lake' }
  - { image: 'images/high_adventure.jpg', url: 'highadventure.html', desc: 'High Adventure Outings' }
 
 ---
@@ -22,37 +19,24 @@ New Berlin and Muskego</p>
 
 <p>
 We are chartered by Forest Park Presbyterian Church in New Berlin.  
-Our meetings changed to every Monday this year, and we began continuing meetings during the summer.  
+We meet every Monday including through the the summer.  
 Meetings are held at Forest Park Presbyterian Church, in the lower level community room, entering from the lower rear door.  
-The meetings run from 7 PM until about 8 PM.  
-This year we completed our 46th year as a Troop, and have earned the Journey to Excellence Gold Award for 2016.</p>
+The meetings run from 7 PM until 8 PM.  
+The troop was founded in 1972 and have earned the Journey to Excellence Gold Award for 2016.
+</p>
 
-<p>Any adults who would like to know more about the Scouting program and how it is designed to work, are encouraged to enroll in New Leader Basic Training.  There are separate training sessions for Leaders or Committee Members.  Please see Rick Ryan for information or Click Here for the next available training sessions. </p>
 
-<h4>Community Service</h4>
+<h4>More about Troop 53</h4>
 
-<p>The Troop is very active in community service, and has become a regular service provider for New Berlin SAYES (Senior Advocate Youth Exchange Service).  We have also been active in collecting items for organizations sending personal items to our military units overseas.  For those Scouts who participated in this activity, we recently received a "Thank You" from Bostik Findley Adhesives Inc, a local company coordinating one of these efforts.</p>
-<p>  
-<h6 style="margin-left: 40px">To Boy Scout Troop 53:</h6>
-<p style="margin-left: 40px"> 
-       On behalf of the employees of Bostik Findley, I would like to thank you for your recent contributions to our "Support our Troops" drive.  With the help of your donations, we were able to ship 340 pounds of items in 11 boxes to an Army support unit located in Iraq.  
-       The unit consists of 110 men and women who are serving their time just north of Baghdad.  They are responsible for the fuel supply for the area.  They love receiving items from home, especially from those they do not know.  Knowing that people are thinking of them gives them the encouragement to keep doing their jobs.  
-       We at Bostik Findley are pleased to know that you care enough to assist us in our efforts.  Out thanks to you.</p>
-<h6 style="margin-left: 40px">Nancy Baker - Project Support</h6>
-
-{{#each outreach}}
+{{#each details}}
 		{{>gallery.static.hbs}}
 {{/each}}
 
 <div class="clearLeft"></div>
 
-<h4>Outings</h4>
-<p>We are a very active troop, going on an outing every month and to summer camp at Long Lake in July.  We had been meeting at Lost Arrow Campsite since the 1970's.  In 2014 we switched to Trail View.  In 2003 our high adventure group became certified as Open Water Scuba Divers, and now as Venture Crew 53 members, have performed more dives. </p>
+<h4>Interesting in joining?</h4>
 
-<p>In the summer of 2005, we sent our first crew to the Scuba Adventure at Sea Base, and attended again in the summers of 2007, 2009 and 2011.  In the summer 2008, we had 2 crews canoeing the Boundary Waters Canoe Area Wilderness in Minnesota.  The summer of 2012, we conducted a High Adventure Trip to Colorado, including a stop at Yellowstone Park.  In June of 2013 we spent 10 days hiking the trails at Philmont Scout Ranch in New Mexico for the first time since 1996.  The summer of 2014, we again attended Sea Base, and in 2015 had 2 crews canoeing the Boundary Waters.</p>
-
-{{#each camping}}
-		{{>gallery.static.hbs}}
-{{/each}}
-
-<br><br>
+<p>Any adults who would like to know more about the Scouting program and how it is designed to work, 
+  are encouraged to enroll in New Leader Basic Training.  
+  There are separate training sessions for Leaders or Committee Members.  
+  Please see Rick Ryan for information. </p>

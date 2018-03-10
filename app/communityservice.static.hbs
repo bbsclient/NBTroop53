@@ -1,0 +1,31 @@
+---
+title: Community Service
+_options:
+  layout: app/layouts/main.static.hbs
+  partials: 
+   - app/partials/photos.static.hbs  
+photos:
+ - { image: 'images/sff.png', desc: 'Scouting Food Drive' }
+---
+
+
+<p>The Troop is very active in community service, and has become a regular service provider for 
+  New Berlin SAYES (Senior Advocate Youth Exchange Service).  
+  We have also been active in collecting items for organizations 
+  sending personal items to our military units overseas.  
+  For those Scouts who participated in this activity, 
+  we recently received a "Thank You" from Bostik Findley Adhesives Inc, 
+  a local company coordinating one of these efforts.</p>
+<p>  
+<h6 style="margin-left: 40px">To Boy Scout Troop 53:</h6>
+<p style="margin-left: 40px"> 
+       On behalf of the employees of Bostik Findley, I would like to thank you for your recent contributions to our "Support our Troops" drive.  With the help of your donations, we were able to ship 340 pounds of items in 11 boxes to an Army support unit located in Iraq.  
+       The unit consists of 110 men and women who are serving their time just north of Baghdad.  They are responsible for the fuel supply for the area.  They love receiving items from home, especially from those they do not know.  Knowing that people are thinking of them gives them the encouragement to keep doing their jobs.  
+       We at Bostik Findley are pleased to know that you care enough to assist us in our efforts.  Out thanks to you.</p>
+<h6 style="margin-left: 40px">Nancy Baker - Project Support</h6>
+
+{{#each photos}}
+		{{>photos.static.hbs}}
+{{/each}}
+
+<div class="clearLeft"></div>
