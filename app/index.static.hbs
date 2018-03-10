@@ -8,8 +8,10 @@ _options:
 <h4>New Berlin, Wisconsin</h4>
 <p>Troop 53 is part of Potawatomi Area Council's South East Unit Service Area serving the youth in the school districts of New Berlin, Muskego, and West Allis.</p>
 
-<h4>Upcoming Events</h4>
-<ul id="events-upcoming"></ul>
+<h4>Upcoming Special Events</h4>
+<ul class="mdl-list" id="events-upcoming">
+
+</ul>
 
 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendar.html">
 	View Calendar
@@ -17,6 +19,9 @@ _options:
 	
     <script src="dist/format-google-calendar.min.js"></script>
     <script>
+	var now = new Date().toISOString();
+	var future = new Date().toISOString();
+
  	formatGoogleCalendar.init({
 	calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/sahdeafo8sgihvvjjkh9qg6ut0@group.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY',
 	past: false,
@@ -25,15 +30,19 @@ _options:
 	dayNames: true,
 	pastTopN: 2,
 	upcomingTopN: 10,
-	itemsTagName: 'li',
+	itemsTagName: 'li class="mdl-list__item mdl-list__item--two-line"',
 	upcomingSelector: '#events-upcoming',
 	pastSelector: '#events-past',
-	recurringEvents: true, 
+	recurringEvents: false, 
 	upcomingHeading: '',
 	pastHeading: '',
-	format: ['*date*', ': ', '*summary*', ' — ', ' in ', '*location*'],
-	timeMin: '2017-06-03T10:00:00-07:00',
-	timeMax: '2020-06-03T10:00:00-07:00'
+	format: ['<span class="mdl-list__item-primary-content"> <i class="material-icons mdl-list__item-avatar">event_note</i><a href="Calendar.html"><span>', 
+				'*summary*', 
+				'</span></a><span class="mdl-list__item-sub-title">',
+				'*date*', 
+				'</span></span>'],
+	timeMin: now,
+	timeMax: '2025-06-03T10:00:00-07:00'
 	});
 </script>
 
