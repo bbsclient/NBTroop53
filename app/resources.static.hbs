@@ -4,25 +4,41 @@ _options:
   layout: app/layouts/main.static.hbs
   partials: 
    - app/partials/resource.static.hbs  
-resources:
+troop_resources:
+ - { title: 'Troop 53 Bylaws (Coming Soon)', type: block, url: ""}
+ - { title: 'Troop 53 Standard Operating Procedures', type: file_download, url: "downloads/Troop%2053%20SOP%20-%20Nov%202011%20rev%202.pdf"}
+ - { title: 'Troop 53 Online Payments (Coming Soon)', type: block, url: ""}
+ - { title: 'Scout Book', type: link, url: "https://www.scoutbook.com/"}
+ - { title: 'Troop 53 Facebook Group', type: link, url: "https://www.facebook.com/groups/1468325346749338/"}
+council_resources:
+ - { title: 'Pottawatomi Area Council, BSA', type: link, url: "http://www.pacbsa.org/"}
+ - { title: 'Camp Long Lake', type: link, url: "http://www.pacbsa.org/2655"}
+ - { title: 'Order of the Arrow - Wag-O-Shag Lodge #280', type: link, url: "http://wagoshag.com/"}
+ - { title: 'Unit Service Area Information - South East USA ', type: link, url: "http://www.pacbsa.org/about-us/unit-service-areas/unit-service-area-2-southeast/64851"}
+bsa_resources:
  - { title: 'Activity Consent Form [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/pdf/19-673.pdf"}
  - { title: 'BSA Medical Form [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/healthsafety/pdf/680-001_abc.pdf"}
  - { title: 'Boy Scout Adult Application [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/pdf/524-501.pdf"}
  - { title: 'Boy Scout Youth Application [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/pdf/524-406.pdf"}
- - { title: 'Pottawatomi Area Council, BSA', type: link, url: "http://www.pacbsa.org/"}
- - { title: 'Scout Book', type: link, url: "https://www.scoutbook.com/"}
- - { title: 'Camp Long Lake', type: link, url: "http://www.pacbsa.org/2655"}
- - { title: 'Unit Service Area Information - South East USA ', type: link, url: "http://www.pacbsa.org/about-us/unit-service-areas/unit-service-area-2-southeast/64851"}
- - { title: 'Order of the Arrow - Wag-O-Shag Lodge #280', type: link, url: "http://wagoshag.com/"}
- - { title: 'Troop 53 Facebook Group', type: link, url: "https://www.facebook.com/groups/1468325346749338/"}
-todo:
-- { title: 'Troop 53 Bylaws', type: file_download, url: "downloads/troop53bylaws.pdf"}
-- { title: 'Troop 53 Communication Plan', type: file_download, url: "downloads/troop53comms_plan.pdf"}
 ---
 
-
+<h4>Troop 53</h4>
 <span class="resource-list mdl-list">
-  {{#each resources}}
+  {{#each troop_resources}}
+    {{>resource.static.hbs}}
+  {{/each}}
+</ul>
+
+<h4>Potawatomi Area Council</h4>
+<span class="resource-list mdl-list">
+  {{#each council_resources}}
+    {{>resource.static.hbs}}
+  {{/each}}
+</ul>
+
+<h4>Boy Scouts of America</h4>
+<span class="resource-list mdl-list">
+  {{#each bsa_resources}}
     {{>resource.static.hbs}}
   {{/each}}
 </ul>
