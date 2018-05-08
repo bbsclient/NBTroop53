@@ -10,6 +10,8 @@ troop_resources:
  - { title: 'Troop 53 Online Payments (Coming Soon)', type: block, url: ""}
  - { title: 'Scout Book', type: link, url: "https://www.scoutbook.com/"}
  - { title: 'Troop 53 Facebook Group', type: link, url: "https://www.facebook.com/groups/1468325346749338/"}
+committee_resources:
+ - { title: 'New Parents New Leaders Guide', type: file_download, url: "downloads/Parents%20and%20New%20Leaders%20Guide.pdf"}
 council_resources:
  - { title: 'Pottawatomi Area Council, BSA', type: link, url: "http://www.pacbsa.org/"}
  - { title: 'Camp Long Lake', type: link, url: "http://www.pacbsa.org/2655"}
@@ -25,6 +27,14 @@ bsa_resources:
 <h4>Troop 53</h4>
 <span class="resource-list mdl-list">
   {{#each troop_resources}}
+    {{>resource.static.hbs}}
+  {{/each}}
+</ul>
+
+<h4>Committee</h4>
+<p>Preview Documents</p>
+<span class="resource-list mdl-list">
+  {{#each committee_resources}}
     {{>resource.static.hbs}}
   {{/each}}
 </ul>
