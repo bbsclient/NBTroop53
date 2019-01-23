@@ -9,7 +9,9 @@ Clone the repository locally and install node.js
 Then run:
 
 npm install
-brunch build
+brunch build -p
+
+or: npm run build
 
 Output should be in a directory called `public`.
 
@@ -17,6 +19,12 @@ Output should be in a directory called `public`.
 To test the site locally run:
 brunch watch --server
 
+or: npm run server
+
 Enter this URL in browser:
 http://localhost:3333
+
+# Debugging vs minification
+Brunch only enables optimziation plugins with the -p parameter.  
+The debug build doesn't enable this but the build does
 

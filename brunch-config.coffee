@@ -2,7 +2,11 @@ exports.config =
   files:
     stylesheets:
       joinTo: 'stylesheets/app.css'
-
+    javascripts: 
+      joinTo: 'app.js'
+  modules:
+    autoRequire:
+      'app.js': ['app']
   plugins:
     static:
       processors: [
