@@ -9,6 +9,7 @@ interface CalendarEvent {
 	start: CalendarTime;
 	end: CalendarTime;
 	recurrence: any;
+	htmlLink: string;
 }
 
 class CalendarEvents {
@@ -119,7 +120,7 @@ class App {
 			let innerHTML : string = 
 				`<span class="mdl-list__item-primary-content"> 
 					<i class="material-icons mdl-list__item-avatar">event_note</i>
-					<a href="calendar.html">
+					<a href=${element.htmlLink}>
 						<span>
 							${element.summary}
 						</span>
@@ -143,7 +144,7 @@ class App {
 		maxTime.setDate(maxTime.getDate() + 90);
 
 		var finalURL : string = this.calendarURL;
-		finalURL += '&fields=items(summary,start,end,recurrence)'; // Only return the needed fields
+		finalURL += '&fields=items(summary,start,end,recurrence,htmlLink)'; // Only return the needed fields
 		finalURL += '&timeMin=' + minTime.toISOString();
 		finalURL += '&timeMax=' + maxTime.toISOString();
 
