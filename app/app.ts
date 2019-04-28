@@ -4,10 +4,14 @@ interface CalendarTime {
     timeZone: string;
 }
 
+interface CalendarDate {
+	date: string;
+}
+
 interface CalendarEvent {
 	summary: string;
-	start: CalendarTime;
-	end: CalendarTime;
+	start: CalendarTime | CalendarDate;
+	end: CalendarTime | CalendarDate;
 	recurrence: any;
 	htmlLink: string;
 }
@@ -34,8 +38,8 @@ class App {
 	private orderNonReoccuringEvents(events: CalendarEvents) : CalendarEvents {
 		// Sort by start time
 		events.items.sort((a: CalendarEvent, b: CalendarEvent) => {
-			let startA = new Date(a.start.dateTime);
-			let startB = new Date(b.start.dateTime);
+			let startA = this.getDate(a.start);
+			let startB = this.getDate(b.start);
 
 			return  startA.getTime() - startB.getTime();
 		});
@@ -80,12 +84,15 @@ class App {
 		return `${hour}:${min_pad}${min} ${am}`;
 	}
 
+	private getDate( value : any) : Date {
+		return new Date( (value.date != undefined) ? value.date : value.dateTime);
+	}
+
 	private formatEventDate( event : CalendarEvent ) : string {
 		let formattedDate : string;
 
-		let start = new Date( event.start.dateTime);
-		let end = new Date( event.end.dateTime);
-
+		let start = this.getDate( event.start );
+		let end = this.getDate( event.end );		
 		let startDay = this.getDayName( start.getDay());
 		let startMonth = this.getMonthName( start.getMonth());
 		let startDate = start.getDate();
