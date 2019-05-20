@@ -94,9 +94,9 @@ class AboutPage extends React.Component {
         </p>
         </div>
         <div className="w-2/3 md:w-1/3">
-            <img src={campingIllustration} alt="Cmaping" />
+            <img src={campingIllustration} alt="Camping" />
           </div>
-          </div>
+        </div>
 
         <p className="font-bold mt-4 text-l uppercase">
           History
@@ -107,7 +107,7 @@ class AboutPage extends React.Component {
             One of the legacies is the ever growing list of scouts that have earned their Eagle which is scouting's highest rank.   
         </p>
 
-        <a href="eagles" className="text-white text-center no-underline font-bold py-2 px-4 mx-1 my-1 w-48 rounded bg-bsa-blue hover:bg-blue-dark object-right">Eagle Scouts</a>
+        <a href="/eagles" className="text-white text-center no-underline font-bold py-2 px-4 mx-1 my-1 w-48 rounded bg-bsa-blue hover:bg-blue-dark object-right">Eagle Scouts</a>
 
         <p className="font-bold mt-4 text-l uppercase">
           Leadership
@@ -117,7 +117,7 @@ class AboutPage extends React.Component {
             The troop is a youth led troop but supported by trained adult leaders.  The training includes all BSA required training and optional training such as NYLT, Wood Badge, Oakleaf, and Philmount Training Classes.  
         </p>
 
-        <a href="leaders" className="text-white text-center w-48 no-underline font-bold py-2 px-4 mx-1 my-1 rounded bg-bsa-blue hover:bg-blue-dark object-right">Adult Leadership</a>
+        <a href="/leaders" className="text-white text-center w-48 no-underline font-bold py-2 px-4 mx-1 my-1 rounded bg-bsa-blue hover:bg-blue-dark object-right">Adult Leadership</a>
 
         <p className="font-bold mt-4 text-l uppercase">
           Activities
