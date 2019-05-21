@@ -7,7 +7,7 @@ function Header({ siteTitle }) {
 
   return (
     <nav className="bg-bsa-red">
-      <div className="flex flex-wrap items-center justify-between max-w-xl mx-auto p-4 md:p-8">
+      <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-8">
         <Link to="/" className="flex items-center no-underline text-white">
           <svg
             className="fill-current h-8 mr-2 w-8"

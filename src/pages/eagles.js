@@ -6,17 +6,17 @@ import ealgeIllustration from "../images/eagle_badge.svg"
 
 function EaglesPage( {data}) {
   const eagles = data.eaglesYaml.scouts.map((eagle) => 
-  <tr className="calendarEvent hover:bg-grey-lighter">            
-  <td className="py-4 px-6 border-b border-grey-light">
+  <tr className="calendarEvent hover:bg-gray-200">            
+  <td className="py-4 px-6 border-b border-gray-400">
     {eagle.num}
   </td>
-  <td className="py-4 px-6 border-b border-grey-light">
+  <td className="py-4 px-6 border-b border-gray-400">
     {eagle.name}
   </td>
-  <td className="py-4 px-6 border-b border-grey-light">
+  <td className="py-4 px-6 border-b border-gray-400">
     {eagle.bor}
   </td>
-  <td className="py-4 px-6 border-b border-grey-light">
+  <td className="py-4 px-6 border-b border-gray-400">
     {eagle.year}
   </td>
 </tr>   
@@ -42,10 +42,10 @@ function EaglesPage( {data}) {
               <table className="text-left w-full border-collapse">
                 <thead>
                   <tr>
-                    <th className="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">#</th>
-                    <th className="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Name</th>
-                    <th className="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">BOR</th>
-                    <th className="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Year</th>
+                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">#</th>
+                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">Name</th>
+                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">BOR</th>
+                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">Year</th>
                   </tr>
                 </thead>
                 <tbody>

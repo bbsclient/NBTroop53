@@ -20,7 +20,7 @@ function IndexPage() {
           alt="Sitting by campfire"
         />
 
-        <h2 className="inline-block my-8 p-3">
+        <h2 className="text-2xl font-bold inline-block my-8 p-3">
           Welcome to New Berlin Scouts BSA Troop 53.
         </h2>
 
@@ -38,7 +38,9 @@ function IndexPage() {
         <div>
 
 
-        <h3>Upcoming Special Events</h3>
+        <h3 className="text-xl font-bold inline-block">
+          Upcoming Special Events
+        </h3>
 
           <CalendarEventList/>
         </div>

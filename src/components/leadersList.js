@@ -5,11 +5,11 @@ class LeadersList extends React.Component {
 
     render() {
         const leaders = this.props.leaders.map((leader) => 
-        <tr className="hover:bg-grey-lighter">            
-        <td className="py-4 px-6 border-b border-grey-light">
+        <tr className="hover:bg-gray-200">            
+        <td className="py-4 px-6 border-b border-gray-400">
           {leader.name}
         </td>
-        <td className="py-4 px-6 border-b border-grey-light">
+        <td className="py-4 px-6 border-b border-gray-400">
           {leader.position}
         </td>
       </tr>   
@@ -24,8 +24,8 @@ class LeadersList extends React.Component {
               <table className="text-left w-full border-collapse">
                 <thead>
                   <tr>
-                    <th className="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Name</th>
-                    <th className="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Position</th>
+                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-700 border-b border-gray-300">Name</th>
+                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-700 border-b border-gray-300">Position</th>
                   </tr>
                 </thead>
                 <tbody>

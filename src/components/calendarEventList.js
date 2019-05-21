@@ -170,8 +170,8 @@ class CalendarEventList extends React.Component {
               <table className="text-left w-full border-collapse">
                 <thead>
                   <tr>
-                    <th className="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Event</th>
-                    <th className="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Actions</th>
+                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-500 border-b border-gray-200">Event</th>
+                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-500 border-b border-gray-200">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
