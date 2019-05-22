@@ -167,7 +167,7 @@ class CalendarEventList extends React.Component {
         return(
           <div className="w-7/8 mx-auto">
             <div className="bg-white shadow-md rounded my-6">
-              <table className="text-left w-full border-collapse">
+              <table>
                 <thead>
                   <tr>
                     <th>Event</th>

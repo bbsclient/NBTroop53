@@ -45,6 +45,10 @@ td {
     @apply py-4 px-6 border-b border-gray-400;
 }
 
+table {
+    @apply text-left w-full border-collapse;
+}
+
 .link-btn {
     @apply text-white font-bold py-2 px-3 mx-1 my-1 rounded text-center;
 }

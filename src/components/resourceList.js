@@ -21,7 +21,7 @@ class ResourceList extends React.Component {
         return(
             <div className="ResourceList w-2/3 mx-auto">
             <div className="bg-white shadow-md rounded my-6">
-              <table className="text-left w-full border-collapse">
+              <table>
                 <thead>
                   <tr>
                     <th>{this.props.title} Resources</th>
