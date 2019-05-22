@@ -23,8 +23,8 @@ function ContactPage() {
  <br/>
  
 
-        <a href="mailto:Troop53@pacunits.org" class="text-white text-center no-underline font-bold py-2 px-4 mx-1 my-1 w-64 rounded bg-bsa-blue hover:bg-blue-900">Contact Troop 53</a>
-        <a href="https://www.forestparkpcusa.org/" class="text-white text-center no-underline font-bold py-2 px-4 mx-1 my-1 w-64 rounded bg-bsa-blue hover:bg-blue-900">Charter Organization</a>
+        <a href="mailto:Troop53@pacunits.org" class="link-btn link-btn-blue w-64">Contact Troop 53</a>
+        <a href="https://www.forestparkpcusa.org/" class="link-btn link-btn-blue w-64">Charter Organization</a>
 
         </div>
 

@@ -16,12 +16,12 @@ class CalendarEvent extends React.Component {
         let rsvpButton = "";
 
         if( this.props.rsvp !== undefined ) {
-            rsvpButton = <a href={this.props.rsvp} class="text-gray-200 no-underline font-bold py-2 px-3 mx-1 rounded text-xs bg-bsa-red hover:bg-red-900">RSVP</a>
+            rsvpButton = <a href={this.props.rsvp} class="link-btn link-btn-red text-xs">RSVP</a>
         }
 
         return(
             <tr className="calendarEvent hover:bg-gray-400">            
-                <td className="py-4 px-6 border-b border-gray-400">
+                <td>
                     <div className="block flex-none">            
                     <div className="font-bold">
                         {this.props.title}
@@ -31,8 +31,8 @@ class CalendarEvent extends React.Component {
                     </div>
                 </div>
                 </td>
-                <td className="py-4 px-6 border-b border-gray-2 00">
-                    <a href={this.props.url} className="text-gray-200 no-underline font-bold py-2 px-3 mx-1 rounded text-xs bg-bsa-blue hover:bg-blue-900">View</a>
+                <td>
+                    <a href={this.props.url} className="link-btn link-btn-blue text-xs">View</a>
                     {rsvpButton}
                 </td>
             </tr> 

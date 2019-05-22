@@ -6,17 +6,17 @@ import ealgeIllustration from "../images/eagle_badge.svg"
 
 function EaglesPage( {data}) {
   const eagles = data.eaglesYaml.scouts.map((eagle) => 
-  <tr className="calendarEvent hover:bg-gray-200">            
-  <td className="py-4 px-6 border-b border-gray-400">
+  <tr className="hover:bg-gray-200">            
+  <td>
     {eagle.num}
   </td>
-  <td className="py-4 px-6 border-b border-gray-400">
+  <td>
     {eagle.name}
   </td>
-  <td className="py-4 px-6 border-b border-gray-400">
+  <td>
     {eagle.bor}
   </td>
-  <td className="py-4 px-6 border-b border-gray-400">
+  <td>
     {eagle.year}
   </td>
 </tr>   
@@ -42,10 +42,10 @@ function EaglesPage( {data}) {
               <table className="text-left w-full border-collapse">
                 <thead>
                   <tr>
-                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">#</th>
-                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">Name</th>
-                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">BOR</th>
-                    <th className="py-4 px-6 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">Year</th>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>BOR</th>
+                    <th>Year</th>
                   </tr>
                 </thead>
                 <tbody>

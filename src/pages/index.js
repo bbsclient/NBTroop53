@@ -31,7 +31,7 @@ function IndexPage() {
         </p>
         <br/>
 
-        <a href="about" className="text-white no-underline font-bold py-2 px-4 rounded bg-bsa-blue hover:bg-blue-dark">More about Troop 53</a>
+        <a href="about" className="link-btn link-btn-blue">More about Troop 53</a>
         <br/>
         <br/>
 
@@ -46,7 +46,7 @@ function IndexPage() {
         </div>
         <br/>
         <div>
-        <a href="calendar" className="text-white no-underline font-bold py-2 px-4 rounded bg-bsa-blue hover:bg-blue-dark">View Calendar</a>
+        <a href="calendar" className="link-btn link-btn-blue">View Calendar</a>
         </div>
       </div>
     </Layout>

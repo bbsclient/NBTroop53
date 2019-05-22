@@ -5,8 +5,8 @@ class ResourceList extends React.Component {
 
     render() {
         const resources = this.props.resources.map((resource) => 
-        <tr className="calendarEvent hover:bg-gray-200">            
-        <td className="py-4 px-6 border-b border-gray-300">
+        <tr className="hover:bg-gray-200">            
+        <td>
             <div className="block flex-none">            
             <div className="font-bold">
                 <a href={resource.url} className="text-bsa-blue underline">{resource.title}</a>
@@ -24,7 +24,7 @@ class ResourceList extends React.Component {
               <table className="text-left w-full border-collapse">
                 <thead>
                   <tr>
-                    <th className="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-gray-800 border-b border-gray-200">{this.props.title} Resources</th>
+                    <th>{this.props.title} Resources</th>
                   </tr>
                 </thead>
                 <tbody>
