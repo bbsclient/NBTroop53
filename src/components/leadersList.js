@@ -4,16 +4,18 @@ import PropTypes from "prop-types";
 class LeadersList extends React.Component {
 
     render() {
-        const leaders = this.props.leaders.map((leader) => 
-        <tr className="hover:bg-gray-200">            
-        <td>
-          {leader.name}
-        </td>
-        <td>
-          {leader.position}
-        </td>
-      </tr>   
-              );      
+        const leaders = this.props.leaders.map((leader) => {
+          let id = leader.name+leader.position;
+          return(
+            <tr key={id}>            
+              <td>
+                {leader.name}
+              </td>
+              <td>
+                {leader.position}
+              </td>
+            </tr>);   
+          });      
         return(
             <div className="LeadersList"> 
             <h4 className="text-center">
@@ -41,7 +43,7 @@ class LeadersList extends React.Component {
 
 LeadersList.propTypes = {
     title: PropTypes.string.isRequired,
-    leaders: PropTypes.object.isRequired
+    leaders: PropTypes.array.isRequired
 };
 
 export default LeadersList;

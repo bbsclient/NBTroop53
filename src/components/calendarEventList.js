@@ -36,7 +36,7 @@ class CalendarEventList extends React.Component {
     }
   
     getDayName(day) {
-      var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      var dayNames = ['Sun.', 'Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.'];
   
       return dayNames[day];
     }
@@ -50,17 +50,25 @@ class CalendarEventList extends React.Component {
       let min = date.getMinutes();
       let am = 'AM';
       let min_pad = '';
-  
+      let seperator =':';
+
       if( hour > 12 ) {
         hour -= 12;
         am = 'PM';
       }
   
-      if( min < 10 ) {
+      
+      if( min === 0 ) {
+        // don't display :00
+        min = '';
+        seperator = '';
+      } else if( min < 10 ) {
         min_pad = '0';
       }
+
+
   
-      return `${hour}:${min_pad}${min} ${am}`;
+      return `${hour}${seperator}${min_pad}${min} ${am}`;
     }
   
     formatEventDate( event ) {
@@ -69,20 +77,19 @@ class CalendarEventList extends React.Component {
       let start = this.getDate( event.start );
       let end = this.getDate( event.end );		
       let startDay = this.getDayName( start.getDay());
-      let startMonth = this.getMonthName( start.getMonth());
+      let startMonth = start.getMonth() + 1;
       let startDate = start.getDate();
-      let startYear = start.getFullYear();
       let endDay =  this.getDayName( end.getDay());
+      let endMonth = end.getMonth() +1;
       let endDate = end.getDate();
-      let endYear = end.getFullYear();
   
       if( this.isSameDay( start, end ) ) {
         let startTimeString = this.formatTimeString( start );
         let endTimeString = this.formatTimeString( end );
   
-        formattedDate = `${startDay} ${startMonth} ${startDate}, ${startYear} - ${startTimeString} - ${endTimeString}`;
+        formattedDate = `${startMonth}/${startDate} ${startDay} ${startTimeString} to ${endTimeString}`;
       } else {
-        formattedDate = `${startDay} ${startMonth} ${startDate} - ${endDay} ${endDate}, ${endYear}`;
+        formattedDate = `${startMonth}/${startDate} ${startDay} - ${endMonth}/${endDate} ${endDay}`;
       }
   
       return formattedDate;

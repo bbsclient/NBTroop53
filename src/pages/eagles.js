@@ -6,7 +6,7 @@ import ealgeIllustration from "../images/eagle_badge.svg"
 
 function EaglesPage( {data}) {
   const eagles = data.eaglesYaml.scouts.map((eagle) => 
-  <tr className="hover:bg-gray-200">            
+  <tr key={eagle.num} className="hover:bg-gray-200">            
   <td>
     {eagle.num}
   </td>

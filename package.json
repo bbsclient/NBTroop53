@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Mike Miller",
   "dependencies": {
-    "gatsby": "^2.4.0",
+    "gatsby": "^2.7.0",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-postcss": "^2.0.7",
     "gatsby-plugin-purgecss": "^3.1.1",

@@ -16,7 +16,7 @@ class CalendarEvent extends React.Component {
         let rsvpButton = "";
 
         if( this.props.rsvp !== undefined ) {
-            rsvpButton = <a href={this.props.rsvp} class="link-btn link-btn-red text-xs">RSVP</a>
+            rsvpButton = <a href={this.props.rsvp} className="link-btn link-btn-red text-xs">RSVP</a>
         }
 
         return(

@@ -5,7 +5,7 @@ class ResourceList extends React.Component {
 
     render() {
         const resources = this.props.resources.map((resource) => 
-        <tr className="hover:bg-gray-200">            
+        <tr key={resource.url} className="hover:bg-gray-200">            
         <td>
             <div className="block flex-none">            
             <div className="font-bold">
@@ -19,7 +19,7 @@ class ResourceList extends React.Component {
         </tr>
               );      
         return(
-            <div className="ResourceList w-2/3 mx-auto">
+            <div className="ResourceList w-7/8">
             <div className="bg-white shadow-md rounded my-6">
               <table>
                 <thead>
@@ -39,7 +39,7 @@ class ResourceList extends React.Component {
 
 ResourceList.propTypes = {
     title: PropTypes.string.isRequired,
-    resources: PropTypes.object.isRequired
+    resources: PropTypes.array.isRequired
 };
 
 export default ResourceList;

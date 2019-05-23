@@ -25,9 +25,7 @@ function IndexPage() {
         </h2>
 
         <p className="leading-loose">
-          Troop 53 is part of Potawatomi Area Council's South East Unit Service Area 
-          serving the youth in the school districts of New Berlin, Muskego, and 
-          part of West Allis.
+          New Berlin Troop 53 is part of Potawatomi Area Council and serves youth in the greater New Berlin area. 
         </p>
         <br/>
 
