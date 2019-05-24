@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Header from "./header";
+import Header from './header';
 
 function Layout({ children }) {
   return (
@@ -26,8 +26,7 @@ function Layout({ children }) {
 
           <footer className="bg-bsa-red">
             <div className="flex justify-between max-w-4xl mx-auto p-4 md:p-8 text-sm">
-              <p className="text-white">
-              </p>
+              <p className="text-white" />
 
               <p>
                 <a
@@ -46,7 +45,7 @@ function Layout({ children }) {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

@@ -1,14 +1,14 @@
-import React from "react";
-import { graphql } from "gatsby"
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import campingIllustration from "../images/undraw_Camping_2g8w.svg";
+import React from 'react';
+import { graphql, Link } from 'gatsby';
 import ImageGallery from 'react-image-gallery';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import campingIllustration from '../images/undraw_Camping_2g8w.svg';
 
-class AboutPage extends React.Component {
-  
+class AboutPage extends React.PureComponent {
   render() {
-    const data = this.props.data;
+    // eslint-disable-next-line react/prop-types
+    const { data } = this.props;
 
     const images = [
       {
@@ -17,7 +17,7 @@ class AboutPage extends React.Component {
         thumbnail: data.summerCampImage1Thumb.childImageSharp.resize.src,
       },
       {
-        description: 'Camp wide relay',
+        description: 'Camp Wide Relay',
         original: data.summerCampImage2.childImageSharp.resize.src,
         thumbnail: data.summerCampImage2Thumb.childImageSharp.resize.src,
       },
@@ -27,12 +27,12 @@ class AboutPage extends React.Component {
         thumbnail: data.summerCampImage3Thumb.childImageSharp.resize.src,
       },
       {
-        description: 'Canoeing outing', 
+        description: 'Canoeing Outing',
         original: data.outingImage1.childImageSharp.resize.src,
         thumbnail: data.outingImage1Thumb.childImageSharp.resize.src,
       },
       {
-        description: "Devil's Lake State Park", 
+        description: "Devil's Lake State Park",
         original: data.outingImage2.childImageSharp.resize.src,
         thumbnail: data.outingImage2Thumb.childImageSharp.resize.src,
       },
@@ -47,12 +47,12 @@ class AboutPage extends React.Component {
         thumbnail: data.adventureImage2Thumb.childImageSharp.resize.src,
       },
       {
-        description: 'Philmount',
+        description: 'Philmont',
         original: data.adventureImage3.childImageSharp.resize.src,
         thumbnail: data.adventureImage3Thumb.childImageSharp.resize.src,
       },
       {
-        description: 'Back Country Adventure', 
+        description: 'Hiking at Philmont',
         original: data.adventureImage4.childImageSharp.resize.src,
         thumbnail: data.adventureImage4Thumb.childImageSharp.resize.src,
       },
@@ -62,38 +62,41 @@ class AboutPage extends React.Component {
         thumbnail: data.volunteerImage1Thumb.childImageSharp.resize.src,
       },
       {
-        description: 'Giving back to the Charter Organization', 
+        description: 'Giving back to the Charter Organization',
         original: data.volunteerImage2.childImageSharp.resize.src,
         thumbnail: data.volunteerImage2Thumb.childImageSharp.resize.src,
-      }
+      },
 
-    ]
+    ];
     return (
       <Layout>
         <SEO
           title="About"
-          keywords={[`Troop-53`, `New-Berlin`, `BSA`, `scouts`]}
+          keywords={['Troop-53', 'New-Berlin', 'BSA', 'scouts']}
         />
 
-      <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-2/3 md:mr-8">
 
-        <p className="font-bold mt-4 text-l uppercase">
+            <p className="font-bold mt-4 text-l uppercase">
           About Us
-        </p>
+            </p>
 
-        <p className="leading-loose pl-2 text-justify">
-            Troop 53 serves youth in the greater New Berlin area and is chartered by Forest Park Presbyterian Church.  
-        </p>
-        <p className="font-bold mt-4 text-l uppercase">
+            <p className="leading-loose pl-2 text-justify">
+            Troop 53 serves youth in the greater New Berlin area and is chartered by
+            Forest Park Presbyterian Church.
+            </p>
+            <p className="font-bold mt-4 text-l uppercase">
           Weekly Meeting
-        </p>
-        <p className="leading-loose pl-2 text-justify"> 
-            Mondays from 7:00 PM until 8:30 PM.<br/>  
-            Held at Forest Park Presbyterian Church, in the lower level community room, entering from the lower rear door.  
-        </p>
-        </div>
-        <div className="w-2/3 md:w-1/3">
+            </p>
+            <p className="leading-loose pl-2 text-justify">
+            Mondays from 7:00 PM until 8:30 PM.
+              <br />
+            Held at Forest Park Presbyterian Church, in the lower level community room,
+            entering from the lower rear door.
+            </p>
+          </div>
+          <div className="w-2/3 md:w-1/3">
             <img src={campingIllustration} alt="Camping" />
           </div>
         </div>
@@ -103,35 +106,40 @@ class AboutPage extends React.Component {
         </p>
 
         <p className="leading-loose pl-2 text-justify">
-            Founded in 1972, the troop has strived to leave a legacy within the community.  
-            One of the legacies is the ever growing list of scouts that have earned their Eagle which is scouting's highest rank.   
+            Founded in 1972, the troop has strived to leave a legacy within the community.
+            One of the legacies is the ever growing list of scouts that have earned
+            their Eagle which is scouting`&apos;`s highest rank.
         </p>
 
-        <a href="/eagles" className="link-btn link-btn-blue w-48">Eagle Scouts</a>
+        <Link to="eagles" className="link-btn link-btn-blue w-48">Eagle Scouts</Link>
 
         <p className="font-bold mt-4 text-l uppercase">
           Leadership
         </p>
 
         <p className="leading-loose pl-2 text-justify">
-            The troop is a youth led troop but supported by trained adult leaders.  The training includes all BSA required training and optional training such as NYLT, Wood Badge, Oakleaf, and Philmount Training Classes.  
+            The troop is a youth led troop but supported by trained adult leaders.
+              The training includes all BSA required training and optional training such as NYLT,
+              Wood Badge, Oakleaf, and other BSA training.
         </p>
 
-        <a href="/leaders" className="link-btn link-btn-blue w-48">Adult Leadership</a>
+        <Link to="leaders" className="link-btn link-btn-blue w-48">Adult Leadership</Link>
 
         <p className="font-bold mt-4 text-l uppercase">
           Activities
         </p>
 
         <p className="leading-loose pl-2 text-justify">
-            The troop attends Summer Camp each year and participates in high adventures ranging from scuba diving at Sea Base, hiking at Philmount, or canoeing in the Boundry Waters.
-            During the other months, the troop has outings such as weekend tent camping, cabin camping, and volunteering in the local community.     
+            The troop attends Summer Camp each year and participates in high
+            adventures ranging from scuba diving at Sea Base, hiking at Philmont,
+            or canoeing in the Boundry Waters.
+            During the other months, the troop has outings such as weekend
+            tent camping, cabin camping, and volunteering in the local community.
         </p>
 
-        <ImageGallery items = {images}/>
+        <ImageGallery items={images} />
       </Layout>
     );
-
   }
 }
 
@@ -175,5 +183,4 @@ export const pageQuery = graphql`
   volunteerImage2Thumb: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
   volunteerImage2: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
  }
- `
-
+ `;

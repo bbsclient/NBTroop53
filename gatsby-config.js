@@ -1,24 +1,24 @@
 module.exports = {
   siteMetadata: {
-    title: `New Berlin Troop 53`,
-    description: `Potawatomi Area Council Scouts BSA Troop 53 from New Berlin`,
-    author: `Mike Miller`
+    title: "New Berlin Troop 53",
+    description: "Potawatomi Area Council Scouts BSA Troop 53 from New Berlin",
+    author: "Mike Miller"
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: `newberlin-troop-53`,
-        short_name: `troop53`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#CE1126`,
-        display: `minimal-ui`,
-        icon: `src/images/bsa.png`
+        name: "newberlin-troop-53",
+        short_name: "troop53",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#CE1126",
+        display: "minimal-ui",
+        icon: "src/images/bsa.png"
       }
     },
-    `gatsby-plugin-postcss`,
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-purgecss",
       options: {
@@ -26,28 +26,28 @@ module.exports = {
         purgeOnly: ["src/css/style.css"]
       }
     },
-    `gatsby-transformer-yaml`,
+    "gatsby-transformer-yaml",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        path: `./src/data/`,
+        path: "./src/data/"
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
-        path: `./src/images/gallery`,
-      },
+        name: "images",
+        path: "./src/images/gallery"
+      }
     },
     // This plugin exposes helper functions for processing
     // images with the NPM package “sharp”. It's used by
     // several other plugins.
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-sharp",
     // This plugin identifies file nodes that are images and
     // transforms these to create new “ImageSharp” nodes.
     // With them you can resize images and
     // generate responsive image thumbnails.
-    `gatsby-transformer-sharp`,    
+    "gatsby-transformer-sharp"
   ]
 };
