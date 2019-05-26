@@ -8,6 +8,11 @@ exports.config =
     autoRequire:
       'app.js': ['app']
   plugins:
+    postcss: {
+      processors: [
+        require('tailwindcss'),
+      ]
+    }  
     static:
       processors: [
         require('html-brunch-static') {

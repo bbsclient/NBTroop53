@@ -45,19 +45,50 @@ scoutmasters:
    
 ---
 
-<h4>Troop Committee Members</h4>
-
-<ul class="person-list mdl-list">
-  {{#each leaders}}
-    {{>leader.static.hbs}}
-  {{/each}}
-</ul>
-
-<h4>Troop Scoutmasters</h4>
-
-<ul class="person-list mdl-list">
-  {{#each scoutmasters}}
-    {{>scoutmaster.static.hbs}}
-  {{/each}}
-</ul>
 		
+      <div class="ResourceList w-7/8 md:w-2/3 mx-auto">
+        <div class="bg-white shadow-md rounded my-6">
+          <table>
+            <thead>
+              <tr>
+                <th class="text-center text-xl" colSpan="2">
+                  Troop Committee Members
+                </th>
+              <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                </tr>                
+              </tr>
+            </thead>
+            <tbody>
+              {{#each leaders}}
+                {{>leader.static.hbs}}
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="ResourceList w-7/8 md:w-2/3 mx-auto">
+        <div class="bg-white shadow-md rounded my-6">
+          <table>
+            <thead>
+              <tr>
+                <th class="text-center text-xl" colSpan="2">
+                  Troop Scoutmasters
+                </th>
+              </tr>
+                <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                </tr>                
+
+            </thead>
+            <tbody>
+              {{#each scoutmasters}}
+                {{>leader.static.hbs}}
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>

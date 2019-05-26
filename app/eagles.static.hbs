@@ -65,12 +65,40 @@ eagles:
  - { year: 2018, bor: '06/09/18', name: 'Teagan Uhan', num: 57 }
  - { year: 2018, bor: '06/24/18', name: 'Zach Fisher', num: 58 }
  - { year: 2019, bor: '01/27/19', name: 'Garrett Pomeroy', num: 59 }
-updated: '2-04-19'
+ - { year: 2019, bor: '05/05/19', name: 'Peter Sparangis', num: 60 }
+ - { year: 2019, bor: '05/05/19', name: 'Gabe Wells', num: 61 }
+updated: '05/05/19'
 ---
 
-<ul class="person-list mdl-list">
-	{{#each eagles}}
-		{{>eagle.static.hbs}}
-	{{/each}}
-</ul>
+      <div class="text-center my-6">
+        <img
+          src="../images/eagle_badge.svg"
+          class="block mx-auto w-1/4"
+          alt="Eagle Badge"
+        />
+      </div>
 
+      <div class="w-7/8 mx-auto">
+        <div class="bg-white shadow-md rounded my-6">
+          <table>
+            <thead>
+              <tr>
+                <th class="text-center text-xl" colSpan="4">
+                  Eagle Scout Honor Roll
+                </th>
+              </tr>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>BOR</th>
+                <th>Year</th>
+              </tr>
+            </thead>
+            <tbody>
+	            {{#each eagles}}
+		            {{>eagle.static.hbs}}
+	            {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>

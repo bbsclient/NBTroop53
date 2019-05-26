@@ -17,6 +17,8 @@
     "brunch": "^2.10.17",
     "brunch-static": "^1.2.3",
     "html-brunch-static": "^1.4.1",
+    "postcss-brunch": "^2.10.1",
+    "tailwindcss": "^1.0.1",
     "typescript": "^3.2.2",
     "typescript-brunch": "^2.3.0",
     "uglify-es": "^3.3.9"

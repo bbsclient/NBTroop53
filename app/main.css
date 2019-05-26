@@ -1,52 +1,39 @@
+@tailwind base;
+
+@tailwind components;
+
+th {
+  @apply py-2 px-4 bg-gray-100 font-bold uppercase text-sm text-gray-800 border-b border-gray-200;
+}
+
+td {
+  @apply py-2 px-4 border-b border-gray-400;
+}
+
+table {
+  @apply text-left w-full border-collapse;
+}
+
+.link-btn {
+  @apply text-white font-bold py-3 px-3 mx-1 my-1 rounded text-center;
+}
+
+.link-btn-blue {
+  @apply bg-bsa-blue;
+}
+.link-btn-blue:hover {
+  @apply bg-blue-600;
+}
+
+.link-btn-red {
+  @apply bg-bsa-red;
+}
+.link-btn-red:hover {
+  @apply bg-blue-600;
+}
+
 body {
-    background-color: #f1e3b6;
+    background-color: #ffffff;
 }
 
-
-
-div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
-    height: 240px;
-}
-
-div.gallery:hover {
-    border: 1px solid #777;
-}
-
-div.gallery img {
-    width: 100%;
-    height:  60%;
-}
-
-div.desc {
-    padding: 15px;
-    text-align: center;
-}
-
-  
-  H2, H3, H1, H4, FOOTER { text-align: center }
-
-  .mdl-list__item-avatar.material-icons {
-    background-color: #f1e3b6;
-    color: inherit;
-    border-radius: 0;
-    height: 100%;
-  }
-
-.resource-list {  
-    margin: auto;
-    width: 100%;
-    padding: 10px;
- }
- .person-list { 
-    margin: auto;
-    width: 100%;
-    padding: 10px;
-  }
-
-.clearLeft {
-   clear: left; 
-}
+@tailwind utilities;
