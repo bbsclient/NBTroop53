@@ -13,6 +13,7 @@
   "author": "Mike Miller",
   "license": "MIT",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.2.0",
     "@paulmedynski/uglify-es-brunch": "^0.9.2",
     "brunch": "^2.10.17",
     "brunch-static": "^1.2.3",
@@ -21,6 +22,7 @@
     "tailwindcss": "^1.0.1",
     "typescript": "^3.2.2",
     "typescript-brunch": "^2.3.0",
-    "uglify-es": "^3.3.9"
+    "uglify-es": "^3.3.9",
+    "cssnano": "^4.1"
   }
 }
