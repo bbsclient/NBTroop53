@@ -13,16 +13,7 @@ exports.config =
         require('tailwindcss'),
         require('cssnano'),
         require('@fullhuman/postcss-purgecss'),
-      ],
-      defaultExtractor: (content) -> content.match(/[A-Za-z0-9-_:/]+/g) || []
-      content: [
-        './app/**/*.hbs',
-        './app/**/*.ts',
-        './app/**/*.html',
-      ],
-      whitelist: [ 
-        'link-btn-red',
-        ],
+      ]
     }
     static:
       processors: [
