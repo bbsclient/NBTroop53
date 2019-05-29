@@ -5,51 +5,80 @@ _options:
   partials: 
    - app/partials/resource.static.hbs  
 troop_resources:
- - { title: 'Troop 53 Handbook', type: file_download, url: "downloads/Troop%2053%20Handbook.pdf"}
- - { title: 'Troop 53 Online Payments - See Scout Account Contributions section', type: link, url: "https://squareup.com/store/friends-of-troop-53/"}
- - { title: 'Scout Book', type: link, url: "https://www.scoutbook.com/"}
- - { title: 'Troop 53 Facebook Group', type: link, url: "https://www.facebook.com/groups/1468325346749338/"}
- - { title: 'Adult Driver and Vehicle Information Slip', type: file_download, url: "downloads/AdultDriverInformationRev1.docx"}
- - { title: 'Adult Resource Survey', type: file_download, url: "downloads/512-116_WB.pdf"}
+ - { title: 'Troop 53 Handbook', description: 'Troop 53 policies', url: "downloads/Troop%2053%20Handbook.pdf"}
+ - { title: 'Troop 53 Online Payments', description: 'See Scout Account Contributions section', url: "https://squareup.com/store/friends-of-troop-53/"}
+ - { title: 'Scout Book', description: "Advancement records and RSVP's", url: "https://www.scoutbook.com/"}
+ - { title: 'Troop 53 Facebook Group', description: 'Private Facebook Group', url: "https://www.facebook.com/groups/1468325346749338/"}
+ - { title: 'Adult Driver and Vehicle Information Slip', description: 'Must be on file with the troop to be a driver', url: "downloads/AdultDriverInformationRev1.docx"}
+ - { title: 'Adult Resource Survey', description: 'New adult survey', url: "downloads/512-116_WB.pdf"}
 committee_resources:
- - { title: 'New Parents New Leaders Guide', type: file_download, url: "downloads/Parents%20and%20New%20Leaders%20guide.pdf"}
+ - { title: 'New Parents New Leaders Guide', description: 'Blah', url: "downloads/Parents%20and%20New%20Leaders%20guide.pdf"}
 council_resources:
- - { title: 'Pottawatomi Area Council, BSA', type: link, url: "http://www.pacbsa.org/"}
- - { title: 'Camp Long Lake', type: link, url: "http://www.pacbsa.org/2655"}
- - { title: 'Order of the Arrow - Wag-O-Shag Lodge #280', type: link, url: "http://wagoshag.com/"}
- - { title: 'Unit Service Area Information - South East USA ', type: link, url: "http://www.pacbsa.org/about-us/unit-service-areas/unit-service-area-2-southeast/64851"}
+ - { title: 'Pottawatomi Area Council, BSA', description: "Our council's site", url: "http://www.pacbsa.org/"}
+ - { title: 'Camp Long Lake', description: "Our council's summer camp", url: "http://www.pacbsa.org/2655"}
+ - { title: 'Order of the Arrow - Wag-O-Shag Lodge #280', description: 'Our local OA lodge', url: "http://wagoshag.com/"}
+ - { title: 'Unit Service Area Information - South East USA ', description: 'Our district', url: "http://www.pacbsa.org/about-us/unit-service-areas/unit-service-area-2-southeast/64851"}
 bsa_resources:
- - { title: 'Activity Consent Form [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/pdf/19-673.pdf"}
- - { title: 'BSA Medical Form [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/healthsafety/pdf/680-001_abc.pdf"}
- - { title: 'Boy Scout Adult Application [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/pdf/524-501.pdf"}
- - { title: 'Boy Scout Youth Application [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/pdf/524-406.pdf"}
+ - { title: 'Activity Consent Form [PDF]', description: 'Permission slip', url: "https://filestore.scouting.org/filestore/pdf/19-673.pdf"}
+ - { title: 'BSA Medical Form [PDF]', description: 'Annual medical form', url: "https://filestore.scouting.org/filestore/healthsafety/pdf/680-001_abc.pdf"}
+ - { title: 'Boy Scout Adult Application [PDF]', description: 'Adult new member application', url: "https://filestore.scouting.org/filestore/pdf/524-501.pdf"}
+ - { title: 'Boy Scout Youth Application [PDF]', description: 'Youth new member application', url: "https://filestore.scouting.org/filestore/pdf/524-406.pdf"}
 ---
-
-<h4>Troop 53</h4>
-<span class="resource-list mdl-list">
+      <div class="w-7/8 md:w-2/3 mx-auto">
+      <div class="ResourceList ">
+        <div class="bg-white shadow-md rounded my-6">
+          <table>
+            <thead>
+              <tr>
+                <th class="text-xl">
+                  TROOP 53
+                </th>
+              </tr>
+            </thead>
+            <tbody>
   {{#each troop_resources}}
     {{>resource.static.hbs}}
   {{/each}}
-</ul>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-<h4>Committee</h4>
-<p>Preview Documents</p>
-<span class="resource-list mdl-list">
-  {{#each committee_resources}}
-    {{>resource.static.hbs}}
-  {{/each}}
-</ul>
-
-<h4>Potawatomi Area Council</h4>
-<span class="resource-list mdl-list">
+      <div class="ResourceList ">
+        <div class="bg-white shadow-md rounded my-6">
+          <table>
+            <thead>
+              <tr>
+                <th class="text-xl">
+                  Potawatomi Area Council
+                </th>
+              </tr>
+            </thead>
+            <tbody>
   {{#each council_resources}}
     {{>resource.static.hbs}}
   {{/each}}
-</ul>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-<h4>Boy Scouts of America</h4>
-<span class="resource-list mdl-list">
+      <div class="ResourceList ">
+        <div class="bg-white shadow-md rounded my-6">
+          <table>
+            <thead>
+              <tr>
+                <th class="text-xl">
+                  Scouts BSA
+                </th>
+              </tr>
+            </thead>
+            <tbody>
   {{#each bsa_resources}}
     {{>resource.static.hbs}}
   {{/each}}
-</ul>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>

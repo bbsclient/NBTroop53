@@ -14,6 +14,7 @@ interface CalendarEvent {
 	end: CalendarTime | CalendarDate;
 	recurrence: any;
 	htmlLink: string;
+	description: string;
 }
 
 class CalendarEvents {
@@ -57,7 +58,7 @@ class App {
 	}
 
 	private getDayName(day : number) : string {
-		var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+		const dayNames = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
 
 		return dayNames[day];
 	}
@@ -66,22 +67,30 @@ class App {
 		return start.toDateString() === end.toDateString();
 	}
 
-	private formatTimeString( date : Date) : string {
+	private formatTimeString( date : Date, addAmPm: boolean) : string {
 		let hour = date.getHours();
-		let min = date.getMinutes();
+		let min = date.getMinutes().toString();
 		let am = 'AM';
-		let min_pad = '';
+		let seperator = ':';
 
 		if( hour > 12 ) {
 			hour -= 12;
 			am = 'PM';
 		}
 
-		if( min < 10 ) {
-			min_pad = '0';
-		}
+		if (min === '0') {
+      // don't display :00
+      min = '';
+      seperator = '';
+    } else if (min.length === 1) {
+      min = `0${min}`;
+    }
 
-		return `${hour}:${min_pad}${min} ${am}`;
+    if (addAmPm === false) {
+      am = '';
+    }
+
+    return `${hour}${seperator}${min}${am}`;
 	}
 
 	private getDate( value : any) : Date {
@@ -91,55 +100,81 @@ class App {
 	private formatEventDate( event : CalendarEvent ) : string {
 		let formattedDate : string;
 
-		let start = this.getDate( event.start );
-		let end = this.getDate( event.end );		
-		let startDay = this.getDayName( start.getDay());
-		let startMonth = this.getMonthName( start.getMonth());
-		let startDate = start.getDate();
-		let startYear = start.getFullYear();
-		let endDay =  this.getDayName( end.getDay());
-		let endDate = end.getDate();
-		let endYear = end.getFullYear();
+    const start = this.getDate(event.start);
+    const end = this.getDate(event.end);
+    const startDay = this.getDayName(start.getDay());
+    const startMonth = start.getMonth() + 1;
+    const startDate = start.getDate();
+    const endDay = this.getDayName(end.getDay());
+    const endMonth = end.getMonth() + 1;
+    const endDate = end.getDate();
 
-		if( this.isSameDay( start, end ) ) {
-			let startTimeString = this.formatTimeString( start );
-			let endTimeString = this.formatTimeString( end );
+    if (this.isSameDay(start, end)) {
+      const startTimeString = this.formatTimeString(start, false);
+      const endTimeString = this.formatTimeString(end, true);
 
-			formattedDate = `${startDay} ${startMonth} ${startDate}, ${startYear} - ${startTimeString} - ${endTimeString}`;
-		} else {
-			formattedDate = `${startDay} ${startMonth} ${startDate} - ${endDay} ${endDate}, ${endYear}`;
+      formattedDate = `${startMonth}/${startDate} ${startDay} ${startTimeString} - ${endTimeString}`;
+    } else {
+      formattedDate = `${startMonth}/${startDate} ${startDay} - ${endMonth}/${endDate} ${endDay}`;
+    }
+
+    return formattedDate;
+	}
+
+	private extractRSVP(event: CalendarEvent) {
+		let { description } = event;
+
+		if (description !== undefined) {
+		  const result = description.match(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#/%=~_|$?!:,.]*\)|[A-Z0-9+&@#/%=~_|$])/igm);
+	
+		  if (result !== null && result.length === 1) {
+			const [url] = result;
+			return url;
+		  }
+		}
+	
+		return undefined;
+	  }
+
+	private formatRSVP( event: CalendarEvent ) : string {
+		const url = this.extractRSVP(event);
+		let rsvpButton : string = '';
+
+		if( url !== undefined) {
+			rsvpButton = `<a href=${url} class="link-btn link-btn-red text-s">RSVP</a>`;
 		}
 
-		return formattedDate;
+		return rsvpButton;
 	}
 
 	private displaySpecialEvents( events: CalendarEvents) {
-		let listElement : HTMLElement = document.getElementById('special-events');
+		let table : HTMLElement = document.getElementById('special-events');
 
 		events.items.forEach(element => {
-			let eventElement : HTMLElement = document.createElement("li");
-			
-			eventElement.classList.add( "mdl-list__item" );
-			eventElement.classList.add( "mdl-list__item--two-line" );
+			let tableRow : HTMLElement = document.createElement("tr");
 			
 			let formatedDate = this.formatEventDate( element );
+			let rsvpButton = this.formatRSVP( element );
+			
+			let innerHTML : string =
+				`<td>
+					<div class="block flex-none">
+				  		<div class="font-bold text-gray-900">
+							<a href=${element.htmlLink} target="_blank" rel="noopener noreferrer">${element.summary}</a>
+				  		</div>
+				  		<div class="text-blue-500">
+						  ${formatedDate}
+				  		</div>
+					</div>
+			  	</td>
+			  	<td>
+					${rsvpButton}
+			  	</td>
+			  `; 
 
-			let innerHTML : string = 
-				`<span class="mdl-list__item-primary-content"> 
-					<i class="material-icons mdl-list__item-avatar">event_note</i>
-					<a href=${element.htmlLink}>
-						<span>
-							${element.summary}
-						</span>
-					</a>
-					<span class="mdl-list__item-sub-title">
-						${formatedDate}
-					</span>
-				</span>`;
+				tableRow.innerHTML = innerHTML;
 
-			eventElement.innerHTML = innerHTML;
-
-			listElement.appendChild( eventElement );
+			table.appendChild( tableRow );
 		});
 	}
 
@@ -151,7 +186,7 @@ class App {
 		maxTime.setDate(maxTime.getDate() + 90);
 
 		var finalURL : string = this.calendarURL;
-		finalURL += '&fields=items(summary,start,end,recurrence,htmlLink)'; // Only return the needed fields
+		finalURL += '&fields=items(summary,start,end,recurrence,htmlLink,description)'; // Only return the needed fields
 		finalURL += '&timeMin=' + minTime.toISOString();
 		finalURL += '&timeMax=' + maxTime.toISOString();
 

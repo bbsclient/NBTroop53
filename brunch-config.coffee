@@ -8,6 +8,13 @@ exports.config =
     autoRequire:
       'app.js': ['app']
   plugins:
+    postcss: {
+      processors: [
+        require('tailwindcss'),
+        require('cssnano'),
+        require('@fullhuman/postcss-purgecss'),
+      ]
+    }
     static:
       processors: [
         require('html-brunch-static') {
