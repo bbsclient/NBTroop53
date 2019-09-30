@@ -94,31 +94,51 @@ class App {
 	}
 
 	private getDate( value : any) : Date {
-		return new Date( (value.date != undefined) ? value.date : value.dateTime);
+		return new Date( (value.date != undefined) ? value.date + "(CDT)" : value.dateTime);
+	}
+
+	private formatDateString( date : Date ) : string {
+		const startMonth = date.getMonth() + 1;
+		const startDate = date.getDate();
+		const startDay = this.getDayName(date.getDay());
+
+		return `${startMonth}/${startDate} ${startDay}`;
 	}
 
 	private formatEventDate( event : CalendarEvent ) : string {
 		let formattedDate : string;
 
-    const start = this.getDate(event.start);
-    const end = this.getDate(event.end);
-    const startDay = this.getDayName(start.getDay());
-    const startMonth = start.getMonth() + 1;
-    const startDate = start.getDate();
-    const endDay = this.getDayName(end.getDay());
-    const endMonth = end.getMonth() + 1;
-    const endDate = end.getDate();
+		if( ( "date" in event.start ) && ( "date" in event.end ) ) {
+			// All day
+			const start = new Date( event.start.date + "(CDT)" );
+			let end = new Date( event.end.date + "(CDT)" );
 
-    if (this.isSameDay(start, end)) {
-      const startTimeString = this.formatTimeString(start, false);
-      const endTimeString = this.formatTimeString(end, true);
+			// Adjust end date by one day
+			end = new Date( end.valueOf() - new Date(86400000).valueOf());
+			
+			if(start.valueOf() === end.valueOf()) {
+				formattedDate = this.formatDateString(start);
+			} else {
+				formattedDate = this.formatDateString(start) + " - " + this.formatDateString(end);
+			}
+		} else if ( ( "dateTime" in event.start ) && ( "dateTime" in event.end )) {
+			const start = new Date( event.start.dateTime );
+			const end = new Date( event.end.dateTime );
 
-      formattedDate = `${startMonth}/${startDate} ${startDay} ${startTimeString} - ${endTimeString}`;
-    } else {
-      formattedDate = `${startMonth}/${startDate} ${startDay} - ${endMonth}/${endDate} ${endDay}`;
-    }
+			if( this.isSameDay(start, end) ) {
+				const startDate = this.formatDateString(start);
+				const startTimeString = this.formatTimeString(start, false);
+				const endTimeString = this.formatTimeString(end, true);
+		
+				formattedDate = `${startDate} ${startTimeString} - ${endTimeString}`;
+			} else {
+				formattedDate = this.formatDateString(start) + " - " + this.formatDateString(end);
+			}
+		} else {
+			formattedDate = "unknown";
+		}
 
-    return formattedDate;
+	    return formattedDate;
 	}
 
 	private extractRSVP(event: CalendarEvent) {
