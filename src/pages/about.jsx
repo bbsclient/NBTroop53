@@ -152,7 +152,7 @@ export const pageQuery = graphql`
     edges {
       node {
         ... on ImageSharp {
-          resize(width: 640, height: 480, grayscale: true)
+          resize(width: 1024, height: 768, grayscale: true)
           {
             src
           }
@@ -160,27 +160,27 @@ export const pageQuery = graphql`
       }
     }
   }
-  summerCampImage1Thumb: file(relativePath: { regex: "/T53-CLL-2017.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  summerCampImage1: file(relativePath: { regex: "/T53-CLL-2017.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  summerCampImage1Thumb: file(relativePath: { regex: "/T53-CLL-2019.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
+  summerCampImage1: file(relativePath: { regex: "/T53-CLL-2019.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   summerCampImage2Thumb: file(relativePath: { regex: "/cll-ribbons-2014.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  summerCampImage2: file(relativePath: { regex: "/cll-ribbons-2014.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  summerCampImage2: file(relativePath: { regex: "/cll-ribbons-2014.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   summerCampImage3Thumb: file(relativePath: { regex: "/flag-ret-2.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  summerCampImage3: file(relativePath: { regex: "/flag-ret-2.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  summerCampImage3: file(relativePath: { regex: "/flag-ret-2.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   outingImage1Thumb: file(relativePath: { regex: "/canoe1.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  outingImage1: file(relativePath: { regex: "/canoe1.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  outingImage1: file(relativePath: { regex: "/canoe1.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   outingImage2Thumb: file(relativePath: { regex: "/devilslake2.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  outingImage2: file(relativePath: { regex: "/devilslake2.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  outingImage2: file(relativePath: { regex: "/devilslake2.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   adventureImage1Thumb: file(relativePath: { regex: "/t053-sb-a-welcome-to-sea-base-s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage1: file(relativePath: { regex: "/t053-sb-a-welcome-to-sea-base-s.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  adventureImage1: file(relativePath: { regex: "/t053-sb-a-welcome-to-sea-base-s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   adventureImage2Thumb: file(relativePath: { regex: "/t053-sb-d-training-s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage2: file(relativePath: { regex: "/t053-sb-d-training-s.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  adventureImage2: file(relativePath: { regex: "/t053-sb-d-training-s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   adventureImage3Thumb: file(relativePath: { regex: "/T053P-IMG_20130629_131427_081s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage3: file(relativePath: { regex: "/T053P-IMG_20130629_131427_081s.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  adventureImage3: file(relativePath: { regex: "/T053P-IMG_20130629_131427_081s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   adventureImage4Thumb: file(relativePath: { regex: "/T053P-IMG_0642s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage4: file(relativePath: { regex: "/T053P-IMG_0642s.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  adventureImage4: file(relativePath: { regex: "/T053P-IMG_0642s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   volunteerImage1Thumb: file(relativePath: { regex: "/bearchair.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  volunteerImage1: file(relativePath: { regex: "/bearchair.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  volunteerImage1: file(relativePath: { regex: "/bearchair.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   volunteerImage2Thumb: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  volunteerImage2: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  volunteerImage2: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
  }
  `;
