@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Mike Miller",
   "dependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.7.3",
     "gatsby": "^2.7.0",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-postcss": "^2.0.7",
@@ -20,8 +20,8 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-image-gallery": "^0.8.16",
-    "tailwindcss": "^1.0.1",
-    "typescript": "^3.4.5"
+    "tailwindcss": "^1.1.4",
+    "typescript": "^3.7.4"
   },
   "keywords": [
     "gatsby",
