@@ -11,7 +11,7 @@ function CalendarPage() {
         title="Calendar"
         keywords={['gatsby', 'tailwind', 'react', 'tailwindcss']}
       />
-      <iframe title="Troop Calendar" className="CalendarPage flex-1 mx-auto w-full h-full" src="https://calendar.google.com/calendar/embed?src=sahdeafo8sgihvvjjkh9qg6ut0%40group.calendar.google.com&ctz=America%2FChicago" border="0" frameBorder="0" scrolling="no" />
+      <iframe title="Troop Calendar" className="CalendarPage flex-1 mx-auto w-full h-full" src="https://calendar.google.com/calendar/embed?src=d5imtm374liirqn82loksf80s75episc%40import.calendar.google.com&ctz=America%2FChicago" border="0" frameBorder="0" scrolling="no" />
     </Layout>
   );
 }

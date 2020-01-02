@@ -1,0 +1,98 @@
+---
+title: Troop 53 Adult Leadership
+_options:
+  layout: app/layouts/main.static.hbs
+  partials: 
+   - app/partials/leader.static.hbs
+   - app/partials/scoutmaster.static.hbs
+footer: "Updated: 5/30/19"
+leaders:
+ - { name: 'Maureen Wise', position: 'Institutional Head' }
+ - { name: 'Tracey Pomeroy', position: 'Chartered Organization Representative' }
+ - { name: 'Rick Pomeroy', position: 'Troop Committee Chair' }
+ - { name: 'Mary Bishop', position: 'Troop Committee Member' }
+ - { name: 'Tim Buban', position: 'Troop Committee Member' }
+ - { name: 'Jay Burtch', position: 'Troop Committee Member' }
+ - { name: 'Sue Burtch', position: 'Troop Committee Member' }
+ - { name: 'George Christenson', position: 'Troop Advancement Chair' }
+ - { name: 'Pat Cliff', position: 'Troop Committee Member' }
+ - { name: 'Brad Farnwarth', position: 'Troop Committee Member' }
+ - { name: 'Bill Giese', position: 'Troop Fundraising Chair' }
+ - { name: 'Tony Goldner', position: 'Troop Committee Member' }
+ - { name: 'Kevin Haass', position: 'Troop Committee Member' }
+ - { name: 'Rob Hackett', position: 'Troop Committee Member' }
+ - { name: 'Kevin Key', position: 'Troop Committee Member' }
+ - { name: 'Ben Koenig', position: 'Troop Committee Member' }
+ - { name: 'Gina Koney', position: 'Troop Committee Member' }
+ - { name: 'John Koney', position: 'Troop Committee Member' }
+ - { name: 'Mike Miller', position: 'Troop Committee Member' }
+ - { name: 'Tracey Pomeroy', position: 'Troop Secretary' }
+ - { name: 'Bill Racsek', position: 'Troop Committee Member' }
+ - { name: 'Darren Rausch', position: 'Troop Committee Member' }
+ - { name: 'Rick Ryan', position: 'Troop Training Chair' }
+ - { name: 'Guy Stuller', position: 'Troop Committee Member' }
+ - { name: 'Jason Umbs', position: 'Troop Committee Member' }
+ - { name: 'Clive Wells', position: 'Troop Outdoor/Activities Chair' }
+
+scoutmasters:
+ - { name: 'Duane Fisher', position: 'Scoutmaster' }
+ - { name: 'Tim Bishop', position: 'Assistant Scoutmaster' }
+ - { name: 'Tyler Englund', position: 'Assistant Scoutmaster' }
+ - { name: 'Roger Englund', position: 'Assistant Scoutmaster' }
+ - { name: 'Josh Fisher', position: 'Assistant Scoutmaster' }
+ - { name: 'Zach Fisher', position: 'Assistant Scoutmaster' }
+ - { name: 'Brian Nelson', position: 'Assistant Scoutmaster' }
+ - { name: 'Jim Pomeroy', position: 'Assistant Scoutmaster' }
+ - { name: 'Bill Ryan', position: 'Assistant Scoutmaster' }
+ - { name: 'Brian Uhan', position: 'Assistant Scoutmaster' }
+ - { name: 'Teagan Uhan', position: 'Assistant Scoutmaster' }
+ - { name: 'Brett Umbs', position: 'Assistant Scoutmaster' }   
+---
+
+		
+      <div class="ResourceList w-7/8 md:w-2/3 mx-auto">
+        <div class="bg-white shadow-md rounded my-6">
+          <table>
+            <thead>
+              <tr>
+                <th class="text-center text-xl" colSpan="2">
+                  Troop Committee Members
+                </th>
+              <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                </tr>                
+              </tr>
+            </thead>
+            <tbody>
+              {{#each leaders}}
+                {{>leader.static.hbs}}
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="ResourceList w-7/8 md:w-2/3 mx-auto">
+        <div class="bg-white shadow-md rounded my-6">
+          <table>
+            <thead>
+              <tr>
+                <th class="text-center text-xl" colSpan="2">
+                  Troop Scoutmasters
+                </th>
+              </tr>
+                <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                </tr>                
+
+            </thead>
+            <tbody>
+              {{#each scoutmasters}}
+                {{>leader.static.hbs}}
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>

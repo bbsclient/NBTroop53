@@ -69,37 +69,56 @@ class CalendarEventList extends React.Component {
   static formatEventDate(event) {
     let formattedDate;
 
-    const start = this.getDate(event.start);
-    const end = this.getDate(event.end);
-    const startDay = this.getDayName(start.getDay());
-    const startMonth = start.getMonth() + 1;
-    const startDate = start.getDate();
-    const endDay = this.getDayName(end.getDay());
-    const endMonth = end.getMonth() + 1;
-    const endDate = end.getDate();
+		if( ( "date" in event.start ) && ( "date" in event.end ) ) {
+			// All day
+			const start = new Date( event.start.date + "(CDT)" );
+			let end = new Date( event.end.date + "(CDT)" );
 
-    if (this.isSameDay(start, end)) {
-      const startTimeString = this.formatTimeString(start, false);
-      const endTimeString = this.formatTimeString(end, true);
+			// Adjust end date by one day
+			end = new Date( end.valueOf() - new Date(86400000).valueOf());
+			
+			if(start.valueOf() === end.valueOf()) {
+				formattedDate = this.formatDateString(start);
+			} else {
+				formattedDate = this.formatDateString(start) + " - " + this.formatDateString(end);
+			}
+		} else if ( ( "dateTime" in event.start ) && ( "dateTime" in event.end )) {
+			const start = new Date( event.start.dateTime );
+			const end = new Date( event.end.dateTime );
 
-      formattedDate = `${startMonth}/${startDate} ${startDay} ${startTimeString} - ${endTimeString}`;
-    } else {
-      formattedDate = `${startMonth}/${startDate} ${startDay} - ${endMonth}/${endDate} ${endDay}`;
-    }
+			if( this.isSameDay(start, end) ) {
+				const startDate = this.formatDateString(start);
+				const startTimeString = this.formatTimeString(start, false);
+				const endTimeString = this.formatTimeString(end, true);
+		
+				formattedDate = `${startDate} ${startTimeString} - ${endTimeString}`;
+			} else {
+				formattedDate = this.formatDateString(start) + " - " + this.formatDateString(end);
+			}
+		} else {
+			formattedDate = "unknown";
+		}
 
     return formattedDate;
   }
 
+	static formatDateString( date ) {
+		const startMonth = date.getMonth() + 1;
+		const startDate = date.getDate();
+		const startDay = this.getDayName(date.getDay());
 
+		return `${startMonth}/${startDate} ${startDay}`;
+  }
+  
   static getDate(value) {
-    return new Date((value.date !== undefined) ? value.date : value.dateTime);
+    return new Date((value.date !== undefined) ? value.date + "(CDT)" : value.dateTime);
   }
 
   static extractRSVP(description) {
     if (description !== undefined) {
       const result = description.match(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#/%=~_|$?!:,.]*\)|[A-Z0-9+&@#/%=~_|$])/igm);
 
-      if (result !== null && result.length === 1) {
+      if (result !== null && result.length >= 1) {
         const [url] = result;
         return url;
       }
@@ -117,8 +136,8 @@ class CalendarEventList extends React.Component {
       return startA.getTime() - startB.getTime();
     });
 
-    // Remove reoccuring events
-    const filteredItems = events.items.filter(event => event.recurrence === undefined);
+    // Remove regular troop meetings
+		const filteredItems = events.items.filter( event => event.summary != 'Troop Meeting');
 
     filteredItems.forEach((event) => {
       // eslint-disable-next-line no-param-reassign
@@ -151,7 +170,7 @@ class CalendarEventList extends React.Component {
     const maxTime = new Date();
     maxTime.setDate(maxTime.getDate() + 90);
 
-    let finalURL = 'https://www.googleapis.com/calendar/v3/calendars/sahdeafo8sgihvvjjkh9qg6ut0@group.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY';
+    let finalURL = 'https://www.googleapis.com/calendar/v3/calendars/d5imtm374liirqn82loksf80s75episc@import.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY';
     finalURL += '&fields=items(summary,start,end,recurrence,htmlLink,description)'; // Only return the needed fields
     finalURL += `&timeMin=${minTime.toISOString()}`;
     finalURL += `&timeMax=${maxTime.toISOString()}`;
