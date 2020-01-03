@@ -5,7 +5,7 @@ module.exports = {
     author: "Mike Miller"
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-react-helmet-async",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
