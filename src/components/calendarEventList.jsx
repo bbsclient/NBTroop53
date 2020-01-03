@@ -153,12 +153,8 @@ class CalendarEventList extends React.Component {
     super(props);
     this.state = {
       events: [{
-        key: '1', title: 'Loading...', date: '', url: '',
-      }, {
-        key: '2', title: 'Loading...', date: '', url: '',
-      }, {
-        key: '3', title: 'Loading...', date: '', url: '',
-      }],
+        summary: 'Loading...', date: '', htmlLink: 'void',
+      }]
     };
   }
 

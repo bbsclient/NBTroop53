@@ -35,7 +35,6 @@ ResourcesPage.propTypes = {
         council_resources: PropTypes.arrayOf(PropTypes.shape({
           title: PropTypes.string.isRequired,
           description: PropTypes.string.isRequired,
-          position: PropTypes.string.isRequired,
           url: PropTypes.string.isRequired,
         })).isRequired,
         bsa_resources: PropTypes.arrayOf(PropTypes.shape({

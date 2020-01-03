@@ -30,7 +30,7 @@ function IndexPage() {
         </p>
         <br />
 
-        <Link to="about" className="link-btn link-btn-blue">More about Troop 53</Link>
+        <Link to="/about/" className="link-btn link-btn-blue">More about Troop 53</Link>
         <br />
         <br />
 
@@ -45,7 +45,7 @@ function IndexPage() {
         </div>
         <br />
         <div>
-          <Link to="calendar" className="link-btn link-btn-blue">View Calendar</Link>
+          <Link to="/calendar/" className="link-btn link-btn-blue">View Calendar</Link>
         </div>
       </div>
     </Layout>

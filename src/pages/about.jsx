@@ -111,7 +111,7 @@ class AboutPage extends React.PureComponent {
             their Eagle which is scouting`&apos;`s highest rank.
         </p>
 
-        <Link to="eagles" className="link-btn link-btn-blue w-48">Eagle Scouts</Link>
+        <Link to="/eagles/" className="link-btn link-btn-blue w-48">Eagle Scouts</Link>
 
         <p className="font-bold mt-4 text-l uppercase">
           Leadership
@@ -123,7 +123,7 @@ class AboutPage extends React.PureComponent {
               Wood Badge, Oakleaf, and other BSA training.
         </p>
 
-        <Link to="leaders" className="link-btn link-btn-blue w-48">Adult Leadership</Link>
+        <Link to="/leaders/" className="link-btn link-btn-blue w-48">Adult Leadership</Link>
 
         <p className="font-bold mt-4 text-l uppercase">
           Activities
@@ -137,7 +137,7 @@ class AboutPage extends React.PureComponent {
             tent camping, cabin camping, and volunteering in the local community.
         </p>
 
-        <ImageGallery items={images} />
+        <ImageGallery className="w-full h-2/3" items={images} />
       </Layout>
     );
   }
@@ -148,18 +148,6 @@ export default AboutPage;
 export const pageQuery = graphql`
   query
   {
-  allImageSharp {
-    edges {
-      node {
-        ... on ImageSharp {
-          resize(width: 1024, height: 768, grayscale: true)
-          {
-            src
-          }
-        }
-      }
-    }
-  }
   summerCampImage1Thumb: file(relativePath: { regex: "/T53-CLL-2019.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
   summerCampImage1: file(relativePath: { regex: "/T53-CLL-2019.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   summerCampImage2Thumb: file(relativePath: { regex: "/cll-ribbons-2014.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
@@ -171,16 +159,16 @@ export const pageQuery = graphql`
   outingImage2Thumb: file(relativePath: { regex: "/devilslake2.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
   outingImage2: file(relativePath: { regex: "/devilslake2.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   adventureImage1Thumb: file(relativePath: { regex: "/t053-sb-a-welcome-to-sea-base-s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage1: file(relativePath: { regex: "/t053-sb-a-welcome-to-sea-base-s.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  adventureImage1: file(relativePath: { regex: "/t053-sb-a-welcome-to-sea-base-s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   adventureImage2Thumb: file(relativePath: { regex: "/t053-sb-d-training-s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage2: file(relativePath: { regex: "/t053-sb-d-training-s.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  adventureImage2: file(relativePath: { regex: "/t053-sb-d-training-s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   adventureImage3Thumb: file(relativePath: { regex: "/T053P-IMG_20130629_131427_081s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage3: file(relativePath: { regex: "/T053P-IMG_20130629_131427_081s.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  adventureImage3: file(relativePath: { regex: "/T053P-IMG_20130629_131427_081s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   adventureImage4Thumb: file(relativePath: { regex: "/T053P-IMG_0642s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage4: file(relativePath: { regex: "/T053P-IMG_0642s.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  adventureImage4: file(relativePath: { regex: "/T053P-IMG_0642s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   volunteerImage1Thumb: file(relativePath: { regex: "/bearchair.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  volunteerImage1: file(relativePath: { regex: "/bearchair.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  volunteerImage1: file(relativePath: { regex: "/bearchair.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
   volunteerImage2Thumb: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  volunteerImage2: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 640, height: 480) { src } } }
+  volunteerImage2: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
  }
  `;
