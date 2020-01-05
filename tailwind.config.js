@@ -1,4 +1,4 @@
-// See https://next.tailwindcss.com/docs/configuratio n for details
+// See https://next.tailwindcss.com/docs/configuration for details
 
 module.exports = {
   theme: {

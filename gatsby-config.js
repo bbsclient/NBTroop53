@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/t53/new-site',
   siteMetadata: {
     title: "New Berlin Troop 53",
     description: "Potawatomi Area Council Scouts BSA Troop 53 from New Berlin",

@@ -10,64 +10,14 @@ class AboutPage extends React.PureComponent {
     // eslint-disable-next-line react/prop-types
     const { data } = this.props;
 
-    const images = [
-      {
-        description: 'Camp Long Lake',
-        original: data.summerCampImage1.childImageSharp.resize.src,
-        thumbnail: data.summerCampImage1Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: 'Camp Wide Relay',
-        original: data.summerCampImage2.childImageSharp.resize.src,
-        thumbnail: data.summerCampImage2Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: 'Flag Retirement',
-        original: data.summerCampImage3.childImageSharp.resize.src,
-        thumbnail: data.summerCampImage3Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: 'Canoeing Outing',
-        original: data.outingImage1.childImageSharp.resize.src,
-        thumbnail: data.outingImage1Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: "Devil's Lake State Park",
-        original: data.outingImage2.childImageSharp.resize.src,
-        thumbnail: data.outingImage2Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: 'Florida Sea Base',
-        original: data.adventureImage1.childImageSharp.resize.src,
-        thumbnail: data.adventureImage1Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: 'Scuba Adventure',
-        original: data.adventureImage2.childImageSharp.resize.src,
-        thumbnail: data.adventureImage2Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: 'Philmont',
-        original: data.adventureImage3.childImageSharp.resize.src,
-        thumbnail: data.adventureImage3Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: 'Hiking at Philmont',
-        original: data.adventureImage4.childImageSharp.resize.src,
-        thumbnail: data.adventureImage4Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: 'Assisting in Cub Scout Events',
-        original: data.volunteerImage1.childImageSharp.resize.src,
-        thumbnail: data.volunteerImage1Thumb.childImageSharp.resize.src,
-      },
-      {
-        description: 'Giving back to the Charter Organization',
-        original: data.volunteerImage2.childImageSharp.resize.src,
-        thumbnail: data.volunteerImage2Thumb.childImageSharp.resize.src,
-      },
+    // Build the set of images for the gallary component
+    let images = data.gallaryYaml.images.map(image => 
+      (
+        { description: image.description, 
+          thumbnail: image.imageFile.thumbnail.resize.src, 
+          original: image.imageFile.original.resize.src }    
+      ) );
 
-    ];
     return (
       <Layout>
         <SEO
@@ -146,29 +96,25 @@ class AboutPage extends React.PureComponent {
 export default AboutPage;
 
 export const pageQuery = graphql`
-  query
-  {
-  summerCampImage1Thumb: file(relativePath: { regex: "/T53-CLL-2019.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  summerCampImage1: file(relativePath: { regex: "/T53-CLL-2019.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  summerCampImage2Thumb: file(relativePath: { regex: "/cll-ribbons-2014.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  summerCampImage2: file(relativePath: { regex: "/cll-ribbons-2014.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  summerCampImage3Thumb: file(relativePath: { regex: "/flag-ret-2.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  summerCampImage3: file(relativePath: { regex: "/flag-ret-2.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  outingImage1Thumb: file(relativePath: { regex: "/canoe1.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  outingImage1: file(relativePath: { regex: "/canoe1.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  outingImage2Thumb: file(relativePath: { regex: "/devilslake2.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  outingImage2: file(relativePath: { regex: "/devilslake2.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  adventureImage1Thumb: file(relativePath: { regex: "/t053-sb-a-welcome-to-sea-base-s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage1: file(relativePath: { regex: "/t053-sb-a-welcome-to-sea-base-s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  adventureImage2Thumb: file(relativePath: { regex: "/t053-sb-d-training-s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage2: file(relativePath: { regex: "/t053-sb-d-training-s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  adventureImage3Thumb: file(relativePath: { regex: "/T053P-IMG_20130629_131427_081s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage3: file(relativePath: { regex: "/T053P-IMG_20130629_131427_081s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  adventureImage4Thumb: file(relativePath: { regex: "/T053P-IMG_0642s.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  adventureImage4: file(relativePath: { regex: "/T053P-IMG_0642s.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  volunteerImage1Thumb: file(relativePath: { regex: "/bearchair.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  volunteerImage1: file(relativePath: { regex: "/bearchair.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
-  volunteerImage2Thumb: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 64, height: 48) { src } } }
-  volunteerImage2: file(relativePath: { regex: "/church.jpg/" }) { childImageSharp { resize(width: 1024, height: 768) { src } } }
- }
+  query {
+    gallaryYaml {
+      images {
+        description
+        imageFile {
+          ...ThumbImage
+          ...FullImage
+        } 
+      } 
+    } 
+  }  
+  fragment ThumbImage on File { 
+    thumbnail : childImageSharp {
+      resize(width: 64, height: 48 ) { src }
+    }
+  }
+  fragment FullImage on File { 
+    original : childImageSharp {
+      resize(width: 1024, height: 768 ) { src }
+    }
+  }
  `;
