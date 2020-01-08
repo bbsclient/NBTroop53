@@ -2,7 +2,7 @@
 resources:
   troop_resources:
   - { title: 'Troop 53 Handbook', type: file_download, url: "downloads/Troop%2053%20Handbook.pdf", description: "Troop 53 policies"}
-  - { title: 'Troop 53 Online Payments', type: link, url: "https://squareup.com/store/friends-of-troop-53/", description: 'See Scout Account Contributions section'}
+  - { title: 'Troop 53 Online Payments', type: link, url: "https://friends-of-troop-53.square.site/scout-account-contribution", description: 'Pay for outings online'}
   - { title: 'Scout Book', type: link, url: "https://www.scoutbook.com/", description: "Advancement records and RSVP's"}
   - { title: 'Troop 53 Facebook Group', type: link, url: "https://www.facebook.com/groups/1468325346749338/", description: 'Private Facebook Group'}
   - { title: 'Adult Driver and Vehicle Information Slip', type: file_download, url: "downloads/AdultDriverInformationRev1.docx", description: 'Must be on file with the troop to be a driver'}
