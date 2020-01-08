@@ -43,6 +43,10 @@ http://localhost:8000
 
 Use `npm run build` to build your site for production.
 
+## Problems
+
+If there are unexpected problems with the build, it could be due to the Gatsby Cache.  Use 'npm run clean' to remove the cache and public folder.  
+
 ## Resources
 
 - [Gatsby documentation](https://www.gatsbyjs.org/docs/)

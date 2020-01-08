@@ -35,6 +35,7 @@
     "analyze:prettier": "prettier --list-different '**/*.{js,css,md,json}'",
     "analyze": "npm run analyze:lint && npm run analyze:prettier",
     "build": "gatsby build --prefix-paths",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
     "fix:lint": "eslint --ext .jsx --ext .js . --fix",
     "fix:prettier": "prettier --write '**/*.{js,css,md,json}'",
