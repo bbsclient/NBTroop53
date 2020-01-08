@@ -14,8 +14,8 @@ class AboutPage extends React.PureComponent {
     let images = data.gallaryYaml.images.map(image => 
       (
         { description: image.description, 
-          thumbnail: withPrefix(image.imageFile.thumbnail.resize.src), 
-          original: withPrefix(image.imageFile.original.resize.src) }    
+          thumbnail: image.imageFile.thumbnail.resize.src, 
+          original: image.imageFile.original.resize.src }    
       ) );
 
     return (
