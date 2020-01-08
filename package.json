@@ -1,28 +1,71 @@
 {
-  "name": "test",
+  "name": "troop-53-site",
+  "description": "Public website for New Berlin Troop 53",
   "version": "1.0.0",
-  "description": "",
-  "private": true,
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "brunch watch --server",
-    "prod-server": "brunch watch --server -p",
-    "build": "brunch build -p"
-  },
   "author": "Mike Miller",
+  "dependencies": {
+    "autoprefixer": "^9.7.3",
+    "gatsby": "^2.18.17",
+    "gatsby-plugin-manifest": "^2.0.24",
+    "gatsby-plugin-postcss": "^2.0.7",
+    "gatsby-plugin-purgecss": "^4.0.0",
+    "gatsby-plugin-react-helmet-async": "^1.0.13",
+    "gatsby-plugin-sharp": "^2.0.37",
+    "gatsby-source-filesystem": "^2.0.37",
+    "gatsby-transformer-sharp": "^2.1.19",
+    "gatsby-transformer-yaml": "^2.1.12",
+    "graphql": "^14.1.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.11.0",
+    "react-helmet-async": "^1.0.4",
+    "react-image-gallery": "^0.8.16",
+    "tailwindcss": "^1.1.4",
+    "typescript": "^3.7.4"
+  },
+  "keywords": [
+    "gatsby",
+    "tailwind",
+    "tailwindcss",
+    "purgecss"
+  ],
   "license": "MIT",
+  "scripts": {
+    "analyze:lint": "eslint --ext .jsx --ext .js .",
+    "analyze:prettier": "prettier --list-different '**/*.{js,css,md,json}'",
+    "analyze": "npm run analyze:lint && npm run analyze:prettier",
+    "build": "gatsby build --prefix-paths",
+    "develop": "gatsby develop",
+    "fix:lint": "eslint --ext .jsx --ext .js . --fix",
+    "fix:prettier": "prettier --write '**/*.{js,css,md,json}'",
+    "fix": "npm run fix:lint && npm run fix:prettier",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^1.2.0",
-    "@paulmedynski/uglify-es-brunch": "^0.9.2",
-    "brunch": "^2.10.17",
-    "brunch-static": "^1.2.3",
-    "html-brunch-static": "^1.4.1",
-    "postcss-brunch": "^2.10.1",
-    "tailwindcss": "^1.0.1",
-    "typescript": "^3.2.2",
-    "typescript-brunch": "^2.3.0",
-    "uglify-es": "^3.3.9",
-    "cssnano": "^4.1"
-  }
+    "@typescript-eslint/eslint-plugin": "^1",
+    "@typescript-eslint/parser": "^1",
+    "@hot-loader/react-dom": "16.11.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.0",
+    "prettier": "^1.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbsclient/NBTroop53"
+  },
+  "bugs": {
+    "url": "https://github.com/bbsclient/NBTroop53/issues"
+  },
+  "eslintIgnore": [
+    "public"
+  ]
 }

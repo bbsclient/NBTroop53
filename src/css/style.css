@@ -1,0 +1,93 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/base.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/base";
+ */
+@tailwind base;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+@import "../../node_modules/react-image-gallery/styles/css/image-gallery.css";
+
+th {
+  @apply py-2 px-4 bg-gray-100 font-bold uppercase text-sm text-gray-800 border-b border-gray-200;
+}
+
+td {
+  @apply py-2 px-4 border-b border-gray-400;
+}
+
+table {
+  @apply text-left w-full border-collapse;
+}
+
+.link-btn {
+  @apply text-white font-bold py-3 px-3 mx-1 my-1 rounded text-center;
+}
+
+.link-btn-blue {
+  @apply bg-bsa-blue;
+}
+.link-btn-blue:hover {
+  @apply bg-blue-600;
+}
+
+.link-btn-red {
+  @apply bg-bsa-red;
+}
+.link-btn-red:hover {
+  @apply bg-blue-600;
+}
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */

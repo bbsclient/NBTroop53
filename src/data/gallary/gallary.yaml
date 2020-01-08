@@ -1,0 +1,12 @@
+images:
+- { image: 'summer/T53-CLL-2019.jpg', description: 'Camp Long Lake' }
+- { image: 'summer/cll-ribbons-2014.jpg', description: 'Camp Wide Relay' }
+- { image: 'summer/flag-ret-2.jpg', description: 'Flag Retirement' }
+- { image: 'outings/canoe1.jpg', description: 'Canoeing Outing' }      
+- { image: 'outings/devilslake2.jpg', description: "Devil's Lake State Park" }
+- { image: 'adventure/t053-sb-a-welcome-to-sea-base-s.jpg', description: 'Florida Sea Base' }
+- { image: 'adventure/t053-sb-d-training-s.jpg', description: 'Scuba Adventure'}
+- { image: 'adventure/T053P-IMG_20130629_131427_081s.jpg', description: 'Philmont'}
+- { image: 'adventure/T053P-IMG_0642s.jpg', description: 'Hiking at Philmont'}
+- { image: 'volunteering/bearchair.jpg', description: 'Assisting in Cub Scout Events'}
+- { image: 'volunteering/church.jpg', description: 'Giving back to the Charter Organization' }
