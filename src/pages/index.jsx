@@ -1,16 +1,16 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import CalendarEventList from '../components/calendarEventList';
-import campingIllustration from '../images/undraw_into_the_night_vumi.svg';
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import CalendarEventList from "../components/calendarEventList";
+import campingIllustration from "../images/undraw_into_the_night_vumi.svg";
 
 function IndexPage() {
   return (
     <Layout>
       <SEO
         title="Home"
-        keywords={['Troop 53', 'New Berlin', 'Boy Scouts', 'Scouts']}
+        keywords={["Troop 53", "New Berlin", "Boy Scouts", "Scouts"]}
       />
 
       <div className="text-center">
@@ -26,26 +26,28 @@ function IndexPage() {
 
         <p className="leading-loose">
           New Berlin Troop 53 is part of Potawatomi Area Council and serves
-           youth in the greater New Berlin area.
+          youth in the greater New Berlin area.
         </p>
         <br />
 
-        <Link to="/about/" className="link-btn link-btn-blue">More about Troop 53</Link>
+        <Link to="/about/" className="link-btn link-btn-blue">
+          More about Troop 53
+        </Link>
         <br />
         <br />
 
         <div>
-
-
           <h3 className="text-xl font-bold inline-block">
-          Upcoming Special Events
+            Upcoming Special Events
           </h3>
 
           <CalendarEventList />
         </div>
         <br />
         <div>
-          <Link to="/calendar/" className="link-btn link-btn-blue">View Calendar</Link>
+          <Link to="/calendar/" className="link-btn link-btn-blue">
+            View Calendar
+          </Link>
         </div>
       </div>
     </Layout>

@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class ResourceList extends React.PureComponent {
   render() {
@@ -9,11 +9,11 @@ class ResourceList extends React.PureComponent {
         <td>
           <div className="block flex-none">
             <div className="font-bold">
-              <a href={resource.url} className="text-bsa-blue underline">{resource.title}</a>
+              <a href={resource.url} className="text-bsa-blue underline">
+                {resource.title}
+              </a>
             </div>
-            <div className="text-blue-500">
-              {resource.description}
-            </div>
+            <div className="text-blue-500">{resource.description}</div>
           </div>
         </td>
       </tr>
@@ -24,16 +24,10 @@ class ResourceList extends React.PureComponent {
           <table>
             <thead>
               <tr>
-                <th>
-                  {title}
-                  {' '}
-Resources
-                </th>
+                <th>{title} Resources</th>
               </tr>
             </thead>
-            <tbody>
-              {resourcesRows}
-            </tbody>
+            <tbody>{resourcesRows}</tbody>
           </table>
         </div>
       </div>
@@ -43,10 +37,12 @@ Resources
 
 ResourceList.propTypes = {
   title: PropTypes.string.isRequired,
-  resources: PropTypes.arrayOf(PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-  })).isRequired,
+  resources: PropTypes.arrayOf(
+    PropTypes.shape({
+      description: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
 
 export default ResourceList;

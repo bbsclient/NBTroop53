@@ -1,19 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class LeadersList extends React.PureComponent {
   render() {
     const { leaders, title } = this.props;
-    const leadersRows = leaders.map((leader) => {
+    const leadersRows = leaders.map(leader => {
       const id = leader.name + leader.position;
       return (
         <tr key={id}>
-          <td>
-            {leader.name}
-          </td>
-          <td>
-            {leader.position}
-          </td>
+          <td>{leader.name}</td>
+          <td>{leader.position}</td>
         </tr>
       );
     });
@@ -33,9 +29,7 @@ class LeadersList extends React.PureComponent {
                   <th>Position</th>
                 </tr>
               </thead>
-              <tbody>
-                {leadersRows}
-              </tbody>
+              <tbody>{leadersRows}</tbody>
             </table>
           </div>
         </div>
@@ -46,10 +40,12 @@ class LeadersList extends React.PureComponent {
 
 LeadersList.propTypes = {
   title: PropTypes.string.isRequired,
-  leaders: PropTypes.arrayOf(PropTypes.shape({
-    position: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  })).isRequired,
+  leaders: PropTypes.arrayOf(
+    PropTypes.shape({
+      position: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
 
 export default LeadersList;
