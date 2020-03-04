@@ -7,8 +7,8 @@ import SEO from "../components/seo";
 import campingIllustration from "../images/undraw_Camping_2g8w.svg";
 
 const AboutPage = ({ data }) => {
-  // Build the set of images for the gallary component
-  const images = data.gallaryYaml.images.map(image => ({
+  // Build the set of images for the gallery component
+  const images = data.galleryYaml.images.map(image => ({
     description: image.description,
     thumbnail: image.imageFile.thumbnail.resize.src,
     original: image.imageFile.original.resize.src
@@ -83,7 +83,7 @@ const AboutPage = ({ data }) => {
 
 AboutPage.propTypes = {
   data: PropTypes.shape({
-    gallaryYaml: PropTypes.shape({
+    galleryYaml: PropTypes.shape({
       images: PropTypes.arrayOf(PropTypes.node).isRequired
     })
   }).isRequired
@@ -93,7 +93,7 @@ export default AboutPage;
 
 export const pageQuery = graphql`
   query {
-    gallaryYaml {
+    galleryYaml {
       images {
         description
         imageFile {

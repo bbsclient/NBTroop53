@@ -12,7 +12,7 @@ exports.createResolvers = ({
   createResolvers,
 }) => {
   createResolvers({
-    GallaryYamlImages: {
+    GalleryYamlImages: {
       imageFile: {
         type: 'File',
         resolve(source, args, context) {
