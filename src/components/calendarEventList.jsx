@@ -36,7 +36,7 @@ const CalendarEventList = () => {
       .then(resultData => setEvents( processEvents(resultData) ))
       .catch(err => setErrors(err));
   }
-
+  
   useEffect(() => {
     fetchData()
   }, []);
