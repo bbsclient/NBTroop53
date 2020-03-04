@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import ealgeIllustration from "../images/eagle_badge.svg";
+import eagleIllustration from "../images/eagle_badge.svg";
 
 function EaglesPage({ data }) {
   const eagles = data.eaglesYaml.scouts.map(eagle => (
@@ -21,7 +21,7 @@ function EaglesPage({ data }) {
 
       <div className="text-center">
         <img
-          src={ealgeIllustration}
+          src={eagleIllustration}
           className="block mx-auto w-1/4"
           alt="Eagle Badge"
         />
