@@ -7,7 +7,7 @@ the build system and TailwindCSS for styling.
 
 Install Gatsby CLI:
 
-```sh
+```
 npm i --global gatsby-cli
 ```
 
@@ -17,7 +17,8 @@ Clone the repository locally and install node.js
 
 Then run:
 
-```npm install
+```
+npm install
 npm run build
 ```
 
@@ -27,8 +28,8 @@ Output should be in a directory called `public`.
 
 To test the site locally run:
 
-```npm run develop
-
+```
+npm run develop
 ```
 
 Enter this URL in browser:
