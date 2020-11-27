@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function LeadersList({ leaders, title })  {
+function LeadersList({ leaders, title }) {
   const leadersRows = leaders.map(leader => {
     const id = leader.name + leader.position;
     return (

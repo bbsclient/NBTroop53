@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function ResourceList({ resources, title })  {
+function ResourceList({ resources, title }) {
   const resourcesRows = resources.map(resource => (
     <tr key={resource.url} className="hover:bg-gray-200">
       <td>

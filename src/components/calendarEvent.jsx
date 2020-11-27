@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const CalendarEvent = ( { rsvp, title, date, url } ) => {
+const CalendarEvent = ({ rsvp, title, date, url }) => {
   let rsvpButton = "";
 
   if (rsvp !== undefined) {
@@ -27,7 +27,7 @@ const CalendarEvent = ( { rsvp, title, date, url } ) => {
       <td>{rsvpButton}</td>
     </tr>
   );
-}
+};
 
 CalendarEvent.defaultProps = {
   rsvp: undefined

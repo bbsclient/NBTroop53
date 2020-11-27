@@ -70,16 +70,16 @@ const AboutPage = ({ data }) => {
 
       <p className="leading-loose pl-2 text-justify">
         The troop attends Summer Camp each year and participates in high
-        adventures ranging from scuba diving at Sea Base, hiking at Philmont,
-        or canoeing in the Boundary Waters. During the other months, the troop
-        has outings such as weekend tent camping, cabin camping, and
-        volunteering in the local community.
+        adventures ranging from scuba diving at Sea Base, hiking at Philmont, or
+        canoeing in the Boundary Waters. During the other months, the troop has
+        outings such as weekend tent camping, cabin camping, and volunteering in
+        the local community.
       </p>
 
       <ImageGallery className="w-full h-2/3" items={images} />
     </Layout>
   );
-}
+};
 
 AboutPage.propTypes = {
   data: PropTypes.shape({

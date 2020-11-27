@@ -1,4 +1,3 @@
-
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
   const config = getConfig();
   if (stage.startsWith('develop') && config.resolve) {
@@ -17,7 +16,7 @@ exports.createResolvers = ({
         type: 'File',
         resolve(source, args, context) {
           return context.nodeModel.getAllNodes({ type: 'File' })
-            .find(file => file.relativePath === source.image);
+            .find((file) => file.relativePath === source.image);
         },
       },
     },

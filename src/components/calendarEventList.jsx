@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import CalendarEvent from "./calendarEvent";
 
 /*
@@ -20,54 +20,6 @@ import CalendarEvent from "./calendarEvent";
         description: string;
     } */
 
-const CalendarEventList = () => {
-  const  [hasError, setErrors] =  useState(false)
-  const  [events,setEvents ] = useState([{ summary: "Loading...", date: "", htmlLink: "void" }])
-
-  async function fetchData() {
-    const minTime = new Date();
-    const maxTime = new Date();
-    maxTime.setDate(maxTime.getDate() + 90);
-
-    let finalURL = `https://www.googleapis.com/calendar/v3/calendars/d5imtm374liirqn82loksf80s75episc@import.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY&fields=items(summary,start,end,recurrence,htmlLink,description)&timeMin=${minTime.toISOString()}&timeMax=${maxTime.toISOString()}&orderBy=starttime&singleEvents=true`;
-
-    fetch(finalURL)
-      .then(response => response.json())
-      .then(resultData => setEvents( processEvents(resultData) ))
-      .catch(err => setErrors(err));
-  }
-  
-  useEffect(() => {
-    fetchData()
-  }, []);
-
-  const calendarItems = events.map(e => (
-    <CalendarEvent
-      key={e.htmlLink}
-      title={e.summary}
-      date={e.date}
-      rsvp={e.rsvpLink}
-      url={e.htmlLink}
-    />
-  ));
-
-  return (
-    <div className="w-7/8 mx-auto md:w-2/3">
-      <div className="bg-white shadow-md rounded my-6">
-        <table>
-          <thead>
-            <tr>
-              <th>Event</th>
-              <th>Task</th>
-            </tr>
-          </thead>
-          <tbody>{calendarItems}</tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
-
 function getDayName(day) {
   const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
 
@@ -76,6 +28,14 @@ function getDayName(day) {
 
 function isSameDay(start, end) {
   return start.toDateString() === end.toDateString();
+}
+
+function formatDateString(date) {
+  const startMonth = date.getMonth() + 1;
+  const startDate = date.getDate();
+  const startDay = getDayName(date.getDay());
+
+  return `${startMonth}/${startDate} ${startDay}`;
 }
 
 function formatTimeString(date, addAmPm) {
@@ -88,7 +48,7 @@ function formatTimeString(date, addAmPm) {
   if (hour > 12) {
     hour -= 12;
     am = " PM";
-  } else if( hour === 12 ) {
+  } else if (hour === 12) {
     am = " PM";
   }
 
@@ -121,9 +81,7 @@ function formatEventDate(event) {
     if (start.valueOf() === end.valueOf()) {
       formattedDate = formatDateString(start);
     } else {
-      formattedDate = `${formatDateString(
-        start
-      )} - ${formatDateString(end)}`;
+      formattedDate = `${formatDateString(start)} - ${formatDateString(end)}`;
     }
   } else if ("dateTime" in event.start && "dateTime" in event.end) {
     const start = new Date(event.start.dateTime);
@@ -136,23 +94,13 @@ function formatEventDate(event) {
 
       formattedDate = `${startDate} ${startTimeString} - ${endTimeString}`;
     } else {
-      formattedDate = `${formatDateString(
-        start
-      )} - ${formatDateString(end)}`;
+      formattedDate = `${formatDateString(start)} - ${formatDateString(end)}`;
     }
   } else {
     formattedDate = "unknown";
   }
 
   return formattedDate;
-}
-
-function formatDateString(date) {
-  const startMonth = date.getMonth() + 1;
-  const startDate = date.getDate();
-  const startDay = getDayName(date.getDay());
-
-  return `${startMonth}/${startDate} ${startDay}`;
 }
 
 function extractRSVP(description) {
@@ -176,6 +124,8 @@ function processEvents(events) {
     event => event.summary !== "Troop Meeting"
   );
 
+  /* eslint no-param-reassign: ["error", { "props": true,
+    "ignorePropertyModificationsFor": ["event"] }] */
   filteredItems.forEach(event => {
     event.date = formatEventDate(event);
     event.rsvpLink = extractRSVP(event.description);
@@ -184,5 +134,54 @@ function processEvents(events) {
   return filteredItems;
 }
 
-export default CalendarEventList;
+const CalendarEventList = () => {
+  const [, setErrors] = useState(false);
+  const [events, setEvents] = useState([
+    { summary: "Loading...", date: "", htmlLink: "void" }
+  ]);
 
+  async function fetchData() {
+    const minTime = new Date();
+    const maxTime = new Date();
+    maxTime.setDate(maxTime.getDate() + 90);
+
+    const finalURL = `https://www.googleapis.com/calendar/v3/calendars/d5imtm374liirqn82loksf80s75episc@import.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY&fields=items(summary,start,end,recurrence,htmlLink,description)&timeMin=${minTime.toISOString()}&timeMax=${maxTime.toISOString()}&orderBy=starttime&singleEvents=true`;
+
+    fetch(finalURL)
+      .then(response => response.json())
+      .then(resultData => setEvents(processEvents(resultData)))
+      .catch(err => setErrors(err));
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const calendarItems = events.map(e => (
+    <CalendarEvent
+      key={e.htmlLink}
+      title={e.summary}
+      date={e.date}
+      rsvp={e.rsvpLink}
+      url={e.htmlLink}
+    />
+  ));
+
+  return (
+    <div className="w-7/8 mx-auto md:w-2/3">
+      <div className="bg-white shadow-md rounded my-6">
+        <table>
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tbody>{calendarItems}</tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default CalendarEventList;
