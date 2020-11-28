@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql, Link } from "gatsby";
+import { graphql, Link, withPrefix } from "gatsby";
 import ImageGallery from "react-image-gallery";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -10,8 +10,8 @@ const AboutPage = ({ data }) => {
   // Build the set of images for the gallery component
   const images = data.galleryYaml.images.map(image => ({
     description: image.description,
-    thumbnail: image.imageFile.thumbnail.resize.src,
-    original: image.imageFile.original.resize.src
+    thumbnail: withPrefix(image.imageFile.thumbnail.resize.src),
+    original: withPrefix(image.imageFile.original.resize.src)
   }));
 
   return (
