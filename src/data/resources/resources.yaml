@@ -11,7 +11,7 @@ resources:
   - { title: 'Potawatomi Area Council, BSA', type: link, url: "http://www.pacbsa.org/", description: "Our council's site"}
   - { title: 'Camp Long Lake', type: link, url: "http://www.pacbsa.org/2655", description: "Our council's summer camp"}
   - { title: 'Order of the Arrow - Wag-O-Shag Lodge #280', type: link, url: "http://wagoshag.com/", description: 'Our local OA lodge'}
-  - { title: 'District - Southwind', type: link, url: "https://www.facebook.com/search/top?q=south%20wind%20district%20-%20pac", description: 'Our district'}
+  - { title: 'South Wind District', type: link, url: "https://www.facebook.com/South-Wind-District-PAC-101661504854501", description: 'Our district'}
   bsa_resources:
   - { title: 'Activity Consent Form [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/pdf/19-673.pdf", description: 'Permission slip'}
   - { title: 'BSA Medical Form [PDF]', type: file_download, url: "https://filestore.scouting.org/filestore/healthsafety/pdf/680-001_abc.pdf", description: 'Annual medical form'}
