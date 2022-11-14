@@ -60,3 +60,7 @@ scouts:
 - { year: 2019, bor: '01/27/19', name: 'Garrett Pomeroy', num: 59 }
 - { year: 2019, bor: '05/05/19', name: 'Peter Sparangis', num: 60 }
 - { year: 2019, bor: '05/05/19', name: 'Gabe Wells', num: 61 }
+- { year: 2021, bor: '09/01/21', name: 'Connor Cliff', num: 62 }
+- { year: 2021, bor: '09/17/21', name: 'Evan Odya', num: 63 }
+- { year: 2021, bor: '11/15/21', name: 'Gabe Olsen', num: 64 }
+- { year: 2022, bor: '10/16/22', name: 'Braeden Rausch', num: 65 }
