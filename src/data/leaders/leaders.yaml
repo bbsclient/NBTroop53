@@ -2,33 +2,20 @@ leaders:
   committee:
   - { name: 'Maureen Wise', position: 'Institutional Head' }
   - { name: 'Tracey Pomeroy', position: 'Chartered Organization Representative' }
-  - { name: 'Mike Miller', position: 'Committee Chair' }
-  - { name: 'Jay Burtch', position: 'Committee Member' }
-  - { name: 'Sue Burtch', position: 'Committee Member' }
-  - { name: 'Pat Cliff', position: 'Committee Member' }
-  - { name: 'Brad Farnwarth', position: 'Committee Member' }
-  - { name: 'Bill Giese', position: 'Fundraising Chair' }
-  - { name: 'Tony Goldner', position: 'Committee Member' }
+  - { name: 'Dana Hetzer', position: 'Committee Chair' }
   - { name: 'Rob Hackett', position: 'Committee Member' }
   - { name: 'Kevin Key', position: 'Committee Member' }
-  - { name: 'Gina Koney', position: 'Committee Member' }
-  - { name: 'John Koney', position: 'Committee Member' }
   - { name: 'Paul Messling', position: 'Committee Member' }
-  - { name: 'Rick Pomeroy', position: 'Committee Member' }
-  - { name: 'Tracey Pomeroy', position: 'Secretary' }
-  - { name: 'Will Racsek', position: 'Committee Member' }
   - { name: 'Darren Rausch', position: 'Committee Member' }
   - { name: 'Heather Rausch', position: 'Treasurer' }
   - { name: 'Rick Ryan', position: 'Training Chair' }
   - { name: 'Guy Stuller', position: 'Committee Member' }
-  - { name: 'Brian Uhan', position: 'Committee Member' }
-  - { name: 'Clive Wells', position: 'Outdoor/Activities Chair' }
+  - { name: 'Clive Wells', position: 'Committee Member' }
+  - { name: 'Danny Reimers', position: 'Committee Member' }
+  - { name: 'Shaun Miller', position: 'Committee Member' }
   scoutmasters:
-  - { name: 'John Koney', position: 'Scoutmaster' }
-  - { name: 'Duane Fisher', position: 'Assistant Scoutmaster' }
-  - { name: 'George Christenson', position: 'Assistant Scoutmaster' }
+  - { name: 'Mike Miller', position: 'Scoutmaster' }
   - { name: 'Roger Englund', position: 'Assistant Scoutmaster' }
-  - { name: 'Zach Fisher', position: 'Assistant Scoutmaster' }
-  - { name: 'Josh Giese', position: 'Assistant Scoutmaster' }
   - { name: 'Brian Nelson', position: 'Assistant Scoutmaster' }
-  - { name: 'Gabe Wells', position: 'Assistant Scoutmaster' }
+  - { name: 'Gabe Olsen', position: 'Assistant Scoutmaster' }
+  - { name: 'Tyler Koney', position: 'Assistant Scoutmaster' }

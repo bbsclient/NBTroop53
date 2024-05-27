@@ -145,7 +145,7 @@ const CalendarEventList = () => {
     const maxTime = new Date();
     maxTime.setDate(maxTime.getDate() + 90);
 
-    const finalURL = `https://www.googleapis.com/calendar/v3/calendars/pd7rj9mum9coj3ari3e2qpon8o8pla8r@import.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY&fields=items(summary,start,end,recurrence,htmlLink,description)&timeMin=${minTime.toISOString()}&timeMax=${maxTime.toISOString()}&orderBy=starttime&singleEvents=true`;
+    const finalURL = `https://www.googleapis.com/calendar/v3/calendars/mkniks29onvr3gp9uai32lr4ucnhk0j7@import.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY&fields=items(summary,start,end,recurrence,htmlLink,description)&timeMin=${minTime.toISOString()}&timeMax=${maxTime.toISOString()}&orderBy=starttime&singleEvents=true`;
 
     fetch(finalURL)
       .then(response => response.json())
