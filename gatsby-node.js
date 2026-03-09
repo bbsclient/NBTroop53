@@ -1,22 +1,27 @@
-exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
-  const config = getConfig();
-  if (stage.startsWith('develop') && config.resolve) {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'react-dom': '@hot-loader/react-dom',
-    };
-  }
+exports.onCreateWebpackConfig = ({ actions, stage }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        'react-dom/server': stage.includes('html')
+          ? 'react-dom/server.node'
+          : 'react-dom/server.browser',
+      },
+    },
+  });
 };
-exports.createResolvers = ({
-  createResolvers,
-}) => {
+exports.createResolvers = ({ createResolvers }) => {
   createResolvers({
     GalleryYamlImages: {
       imageFile: {
         type: 'File',
-        resolve(source, args, context) {
-          return context.nodeModel.getAllNodes({ type: 'File' })
-            .find((file) => file.relativePath === source.image);
+        async resolve(source, args, context) {
+          const { entries } = await context.nodeModel.findAll({
+            type: 'File',
+            query: {
+              filter: { relativePath: { eq: source.image } },
+            },
+          });
+          return Array.from(entries)[0] || null;
         },
       },
     },
